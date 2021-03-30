@@ -1,22 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {bottomBar} from '../assets/images/Images';
 import {HeadingLarge, StatusBarColor} from '../utils/Constants';
 export default ()=>{
     return(
         <View style={styles.container}>
-            <View style={styles.iconContainer}>
+            <TouchableOpacity style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.home} />
-            </View>
-            <View style={styles.iconContainer}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.message} />
-            </View>
-            <View style={styles.iconContainer}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.donations} />
-            </View>
-            <View style={styles.iconContainer}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.settings} />
-            </View>
+            </TouchableOpacity>
 
         </View>
     )
