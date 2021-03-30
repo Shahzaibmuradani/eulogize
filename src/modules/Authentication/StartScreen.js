@@ -4,25 +4,19 @@ import {background_splash, logo} from '../../assets/images/Images'
 import Button from '../../components/SolidButton'
 import BorderButton from '../../components/BorderButton'
 import { useDispatch } from 'react-redux';
-import {setUserType} from '../../redux/userType'
+import {setUserType} from '../../redux/userType';
 import { transform } from '@babel/core';
 const SWidth = Dimensions.get('window').width
 const SHeight =  Dimensions.get('window').height
 
 const StartScreen = ({navigation}) => {
 
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
   const opacity = useState(new Animated.Value(0))[0]
   const slideAnimations = useState(new Animated.Value(0))[0]
   const resizeAnimations = useState(new Animated.Value(0))[0]
 
   useEffect(()=>{
-    // Animated.timing(opacity,{
-    //   toValue:1,
-    //   duration:5000,
-    //   useNativeDriver:true
-    // }).start()
-
     Animated.timing(slideAnimations,{
       toValue:1,
       duration:2000,

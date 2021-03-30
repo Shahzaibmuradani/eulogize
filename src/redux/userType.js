@@ -7,7 +7,6 @@ export const userType = createSlice({
   },
   reducers: {
     setUserType: (state,action) => {
-    
       state.userType = action.payload
     },
    

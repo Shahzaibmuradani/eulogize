@@ -5,17 +5,18 @@ import Button from '../../components/SolidButton'
 import Divider from '../../components/Divider'
 import { CheckBox } from 'react-native-elements';
 import {RedColor} from "../../utils/Constants"
+import { useSelector } from 'react-redux';
+
+
 
 const SHeight =  Dimensions.get('window').height
 
-
-
 const LoginScreen = ({navigation})=>{
     const [check, setCheck] = React.useState(true)
+    const userType = useSelector(state => state.userType.userType)
     return(
         <View style={styles.container}>
-        <ImageBackground source={background_splash} style={styles.background}>
-        
+            <ImageBackground source={background_splash} style={styles.background}>
             <Image source={logo} style={styles.logo} />
             <View style={styles.childContainer}>
                 
@@ -50,36 +51,39 @@ const LoginScreen = ({navigation})=>{
                 </View>
                 <Divider/>
 
-                <View style={[styles.flexRow, ]}>
-                <CheckBox
-                    onPress={()=>setCheck(!check)}
-                    center
-                    checkedIcon='dot-circle-o'
-                    uncheckedIcon='circle-o'
-                    checkedColor={RedColor}
-                    uncheckedColor={RedColor}
-                    checked={check}
-                    size={20}
-                    containerStyle={{width:"5%", }}
+                <View style={styles.flexRow}>
+                    <CheckBox
+                        onPress={()=>setCheck(!check)}
+                        center
+                        checkedIcon='dot-circle-o'
+                        uncheckedIcon='circle-o'
+                        checkedColor={RedColor}
+                        uncheckedColor={RedColor}
+                        checked={check}
+                        size={20}
+                        containerStyle={{width:"5%", }}
                     />
                     <Text style={styles.rememberText}>Remember Me</Text>
                     <TouchableOpacity style={{width:"40%",justifyContent:'center'}}
-                     onPress={()=>navigation.navigate("ForgotPassword")}>
+                        onPress={()=>navigation.navigate("ForgotPassword")}>
                         <Text
-                         style=
-                         {{
-                              
-                             fontSize:12,
-                             textAlign:"right",
-                             fontFamily:"Roboto-Regular",
-                             alignSelf:"center", 
-                             color:RedColor,
-                             textDecorationLine: 'underline'}}
-                         >Forgot Password</Text>
+                            style={{
+                            fontSize:12,
+                            textAlign:"right",
+                            fontFamily:"Roboto-Regular",
+                            alignSelf:"center", 
+                            color:RedColor,
+                            textDecorationLine: 'underline'}}>Forgot Password</Text>
                     </TouchableOpacity>
                 </View>
-                
                 <Button 
+                    onPress={()=>{
+                        if(userType == "user"){
+                            navigation.navigate("UserHome")
+                        }else{
+                            navigation.navigate("FuneralHome")
+                        }
+                    }}
                     text={"LOGIN"} 
                     style={{marginTop:20}}
                     />
@@ -88,11 +92,8 @@ const LoginScreen = ({navigation})=>{
                         Don't have an account? <Text style={{color:RedColor, fontFamily:"Roboto-Medium"}}>SINGUP</Text>
                     </Text>
                 </TouchableOpacity>
-
                 <Text style={{fontSize:12,fontFamily:"Roboto-Regular",textDecorationLine: 'underline', marginTop:40, alignSelf:"center"}}>Terms And Conditions</Text>
-
             </View>
-          
         </ImageBackground>
        
         
