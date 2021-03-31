@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Image, ImageBackground, SafeAreaView,View,Animated, StyleSheet,Dimensions, } from 'react-native';
-import {background_splash, logo} from '../../assets/images/Images'
+import {background_splash, logo} from '../../assets/images/Images';
 import Button from '../../components/SolidButton'
 import BorderButton from '../../components/BorderButton'
 import { useDispatch } from 'react-redux';
