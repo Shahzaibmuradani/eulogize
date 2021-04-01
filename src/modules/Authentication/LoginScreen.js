@@ -17,86 +17,84 @@ const LoginScreen = ({navigation})=>{
     return(
         <View style={styles.container}>
             <ImageBackground source={background_splash} style={styles.background}>
-            <Image source={logo} style={styles.logo} />
-            <View style={styles.childContainer}>
-                
-                <View style={styles.flexRow}>
-                    <View style={styles.w80}>
-                        <TextInput
-                            style={{height: 40,color:"black"}}
-                            placeholder="Email"
-                            placeholderTextColor={'grey'}
+                <Image source={logo} style={styles.logo} />
+                <View style={styles.childContainer}>
+                    
+                    <View style={styles.flexRow}>
+                        <View style={styles.w80}>
+                            <TextInput
+                                style={{height: 40,color:"black"}}
+                                placeholder="Email"
+                                placeholderTextColor={'grey'}
+                            />
+                        </View>
+
+                        <View style={styles.w20}>
+                            <Image source={tick} style={styles.formImages} />
+                        </View>
+                    </View>
+                    <Divider/>
+
+                    <View style={styles.flexRow}>
+                        <View style={styles.w80}>
+                            <TextInput
+                                style={{height: 40,color:"black"}}
+                                placeholder="Password"
+                                placeholderTextColor={'grey'}
+                                secureTextEntry={true}
+                            />
+                        </View>
+
+                        <View style={styles.w20}>
+                            <Image source={eye} style={styles.formImages} />
+                        </View>
+                    </View>
+                    <Divider/>
+
+                    <View style={styles.flexRow}>
+                        <CheckBox
+                            onPress={()=>setCheck(!check)}
+                            center
+                            checkedIcon='dot-circle-o'
+                            uncheckedIcon='circle-o'
+                            checkedColor={RedColor}
+                            uncheckedColor={RedColor}
+                            checked={check}
+                            size={20}
+                            containerStyle={{width:"5%", }}
                         />
+                        <Text style={styles.rememberText}>Remember Me</Text>
+                        <TouchableOpacity style={{width:"40%",justifyContent:'center'}}
+                            onPress={()=>navigation.navigate("ForgotPassword")}>
+                            <Text
+                                style={{
+                                fontSize:12,
+                                textAlign:"right",
+                                fontFamily:"Roboto-Regular",
+                                alignSelf:"center", 
+                                color:RedColor,
+                                textDecorationLine: 'underline'}}>Forgot Password</Text>
+                        </TouchableOpacity>
                     </View>
-
-                    <View style={styles.w20}>
-                        <Image source={tick} style={styles.formImages} />
-                    </View>
-                </View>
-                <Divider/>
-
-                <View style={styles.flexRow}>
-                    <View style={styles.w80}>
-                        <TextInput
-                            style={{height: 40,color:"black"}}
-                            placeholder="Password"
-                            placeholderTextColor={'grey'}
-                            secureTextEntry={true}
+                    <Button 
+                        onPress={()=>{
+                            if(userType == "user"){
+                                navigation.navigate("UserHome")
+                            }else{
+                                navigation.navigate("FuneralHome")
+                            }
+                        }}
+                        text={"LOGIN"} 
+                        style={{marginTop:20}}
                         />
-                    </View>
-
-                    <View style={styles.w20}>
-                        <Image source={eye} style={styles.formImages} />
-                    </View>
-                </View>
-                <Divider/>
-
-                <View style={styles.flexRow}>
-                    <CheckBox
-                        onPress={()=>setCheck(!check)}
-                        center
-                        checkedIcon='dot-circle-o'
-                        uncheckedIcon='circle-o'
-                        checkedColor={RedColor}
-                        uncheckedColor={RedColor}
-                        checked={check}
-                        size={20}
-                        containerStyle={{width:"5%", }}
-                    />
-                    <Text style={styles.rememberText}>Remember Me</Text>
-                    <TouchableOpacity style={{width:"40%",justifyContent:'center'}}
-                        onPress={()=>navigation.navigate("ForgotPassword")}>
-                        <Text
-                            style={{
-                            fontSize:12,
-                            textAlign:"right",
-                            fontFamily:"Roboto-Regular",
-                            alignSelf:"center", 
-                            color:RedColor,
-                            textDecorationLine: 'underline'}}>Forgot Password</Text>
+                    <TouchableOpacity>
+                        <Text style={{fontFamily:"Roboto-Light", alignSelf:"center", marginTop:20}}>
+                            Don't have an account? <Text style={{color:RedColor, fontFamily:"Roboto-Medium"}}>SINGUP</Text>
+                        </Text>
                     </TouchableOpacity>
+                    <Text style={{fontSize:12,fontFamily:"Roboto-Regular",textDecorationLine: 'underline', marginTop:40, alignSelf:"center"}}>Terms And Conditions</Text>
                 </View>
-                <Button 
-                    onPress={()=>{
-                        if(userType == "user"){
-                            navigation.navigate("UserHome")
-                        }else{
-                            navigation.navigate("FuneralHome")
-                        }
-                    }}
-                    text={"LOGIN"} 
-                    style={{marginTop:20}}
-                    />
-                <TouchableOpacity>
-                    <Text style={{fontFamily:"Roboto-Light", alignSelf:"center", marginTop:20}}>
-                        Don't have an account? <Text style={{color:RedColor, fontFamily:"Roboto-Medium"}}>SINGUP</Text>
-                    </Text>
-                </TouchableOpacity>
-                <Text style={{fontSize:12,fontFamily:"Roboto-Regular",textDecorationLine: 'underline', marginTop:40, alignSelf:"center"}}>Terms And Conditions</Text>
-            </View>
-        </ImageBackground>
-       
-        
+            </ImageBackground>
       </View>
     )
 }

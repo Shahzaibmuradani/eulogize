@@ -25,8 +25,8 @@ function Navigator({setConnetion, isConnected}) {
                 
                 <Stack.Screen name="StartScreen" component={StartScreen} />
                 <Stack.Screen name="LoginScreen" component={LoginScreen} />
-                <Stack.Screen name="UserHome" component={PlatformOS == "ios" ? DrawerNavigator :TabNavigator} />
-                <Stack.Screen name="FuneralHome" component={PlatformOS == "ios" ? DrawerNavigator2 :TabNavigator2} />
+                <Stack.Screen name="UserHome" component={PlatformOS == "android" ? DrawerNavigator :TabNavigator} />
+                <Stack.Screen name="FuneralHome" component={PlatformOS == "android" ? DrawerNavigator2 :TabNavigator2} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
             </Stack.Navigator>
         </NavigationContainer>

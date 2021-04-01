@@ -5,6 +5,10 @@ export const eye = require('./Eye.png')
 export const burger_icon = require('./burger_menu.png')
 export const home_icon = require('./home_icon.png')
 export const white_back_icon= require('./white_back_icon.png')
+export const search = require('./search.png')
+export const calander = require('./calander.png')
+
+
 
 
 export const bottomBar = {

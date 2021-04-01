@@ -15,7 +15,8 @@ import styles from './styles';
 import {background_splash} from '../../../assets/images/Images';
 import Card from '../../../components/SubscriptionCards';
 import Button from '../../../components/BorderButton';
-const FuneralHome = () => {
+import Calander from '../../../components/calander';
+const FuneralHome = ({navigation}) => {
     const [plans, setPlans] = useState([
       {
         isChecked:true,
@@ -45,10 +46,25 @@ const FuneralHome = () => {
         color:'#000'
       }
     ])
+    const [showCalander, setShowCalander] = useState(false)
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor:StatusBarColor }}>
-        {PlatformOS == "android" &&<Header/>}
+        <Header
+          PlatformOS={'android'}
+          backIcon={false}
+          onLeftIconPress={()=>{}}
+          onRightIconPress={()=>{setShowCalander(true)}}
+          searchBar={true}
+          onSearch={(x)=>{}}
+          RightComonent={()=> <Text style={{color:'#fff',textAlign:'center'}}>Save</Text>}
+          title="Home"
+          navigation={navigation}
+        />
         <ScrollView showsVerticalScrollIndicator={false}>
+          <Calander onChange={(x)=>{
+            setShowCalander(false)
+            console.log(x)
+            }} show={showCalander} onHide={()=>{setShowCalander(false)}} />
           <ImageBackground source={background_splash} style={styles.container}>
               <Text style={styles.heading}>SELECT A SUBSCRIPTION PLAN</Text>
               {
