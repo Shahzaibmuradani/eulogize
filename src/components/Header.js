@@ -17,7 +17,7 @@ const Header = ({
     
     return(
         <View style={styles.container}>
-            <View style={styles.navContainer}>
+            <View style={[styles.navContainer, {marginBottom:searchBar ? 20 : 0}]}>
                 <View style={{marginRight: PlatformOS == "android" ? 20 : 0 }}>
                     <TouchableOpacity onPress={()=> backIcon ? navigation.goBack() : console.log("open drawerr") }>
                         <Image source={backIcon ? white_back_icon :burger_icon} style={styles.icons}/>
@@ -34,7 +34,7 @@ const Header = ({
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%'}}>
+            {searchBar && <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%'}}>
                 <View style={styles.searchContainer}>
                     <TextInput 
                         autoCorrect={false}
@@ -47,7 +47,7 @@ const Header = ({
                 <TouchableOpacity onPress={onRightIconPress}>
                     <Image source={calander} style={styles.calanderIcon}/>
                 </TouchableOpacity>
-            </View>
+            </View>}
         </View>
     )
 }
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
         width:'100%',
         flexDirection:'row',
         alignItems:'center',
-        marginBottom:20,
     },
     icons:{
         resizeMode:'contain', 

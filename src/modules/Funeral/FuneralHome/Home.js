@@ -54,7 +54,7 @@ const FuneralHome = ({navigation}) => {
           backIcon={true}
           onLeftIconPress={()=>{}}
           onRightIconPress={()=>{setShowCalander(true)}}
-          searchBar={true}
+          searchBar={false}
           onSearch={(x)=>{}}
           RightComonent={()=> <Text style={{color:'#fff',textAlign:'center'}}>Save</Text>}
           title="Home"
