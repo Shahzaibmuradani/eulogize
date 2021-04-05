@@ -5,7 +5,7 @@ import Button from '../components/SolidButton'
 const SWidth = Dimensions.get('window').width;
 const SHeight =  Dimensions.get('window').height;
 
-const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,ButtonStyle})=>{
+const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,ButtonStyle, navigation})=>{
     
     return(
         <View>

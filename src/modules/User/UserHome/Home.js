@@ -22,7 +22,7 @@ const UserHome = ({navigation}) => {
           <ImageBackground source={background_splash} style={styles.container}>
             <Image source={logo} style={styles.logo}/>
             <Button
-                onPress={()=>{console.log('submit')}}
+                onPress={()=>{navigation.navigate("DonationForm")}}
                 textStyle={{color:fontWhite, fontWeight:'normal'}}
                 text={"REQUEST FOR DONATION"} 
                 style={{backgroundColor:RedColor, width:'100%', marginBottom:30}}/>

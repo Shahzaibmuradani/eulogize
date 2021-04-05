@@ -12,6 +12,8 @@ import ForgotPassword from '../modules/Authentication/ForgotPassword';
 import {PlatformOS} from '../utils/Constants';
 import BottomBar from './BottomTabs';
 import DrawerView from './Drawer';
+import DonationForm from '../modules/User/DonationForm/DonationForm'
+import UserSettings from '../modules/User/Setting/Setting'
 
 
 function Navigator({setConnetion, isConnected}) {
@@ -25,8 +27,8 @@ function Navigator({setConnetion, isConnected}) {
                 
                 <Stack.Screen name="StartScreen" component={StartScreen} />
                 <Stack.Screen name="LoginScreen" component={LoginScreen} />
-                <Stack.Screen name="UserHome" component={PlatformOS == "ios" ? DrawerNavigator :TabNavigator} />
-                <Stack.Screen name="FuneralHome" component={PlatformOS == "ios" ? DrawerNavigator2 :TabNavigator2} />
+                <Stack.Screen name="UserHome" component={PlatformOS == "android" ? DrawerNavigator :TabNavigator} />
+                <Stack.Screen name="FuneralHome" component={PlatformOS == "" ? DrawerNavigator2 :TabNavigator2} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
             </Stack.Navigator>
         </NavigationContainer>
@@ -39,6 +41,8 @@ const TabNavigator = ()=>{
     return(
         <Tab.Navigator tabBar={props => <BottomBar {...props}/>}>
             <Tab.Screen name="UserHome" component={UserHome} />
+            <Tab.Screen name="DonationForm" component={DonationForm} />
+            <Tab.Screen name="UserSettings" component={UserSettings} />
         </Tab.Navigator>
     )
 }

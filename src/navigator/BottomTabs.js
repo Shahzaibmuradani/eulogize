@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {bottomBar} from '../assets/images/Images';
 import {HeadingLarge, StatusBarColor} from '../utils/Constants';
-export default ()=>{
+export default ({navigation})=>{
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.iconContainer}>
@@ -14,7 +14,7 @@ export default ()=>{
             <TouchableOpacity style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.donations} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("UserSettings")}>
                 <Image style={styles.icon} source={bottomBar.settings} />
             </TouchableOpacity>
 
