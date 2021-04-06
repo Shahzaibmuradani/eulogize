@@ -17,5 +17,33 @@ export default StyleSheet.create({
     listSection:{
         width:"100%"
         ,backgroundColor:"#F8F8F8" 
+    },
+    listChild:{
+        flexDirection:'row',
+        alignItems:'center', 
+        paddingHorizontal:10, 
+        paddingVertical:10
+    },
+    w40:{
+        width:"40%"
+    },
+    w30:{
+        width:"30%",
+        alignItems:"flex-end"
+    },
+    galleryContainer:{
+        paddingTop:20, 
+        flexDirection:'row', 
+        justifyContent:'space-evenly',
+    },
+    imageGallery:{
+        height:50, width:50, resizeMode:'contain'
+    },
+    alignJustify:{
+        alignItems: 'center',
+        justifyContent: 'center',
+    }, 
+    plus_icon:{
+        height:20, width:20, resizeMode:'contain',
     }
 })

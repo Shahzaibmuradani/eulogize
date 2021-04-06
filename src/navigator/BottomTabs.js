@@ -5,10 +5,10 @@ import {HeadingLarge, StatusBarColor} from '../utils/Constants';
 export default ({navigation})=>{
     return(
         <View style={styles.container}>
-            <TouchableOpacity style={styles.iconContainer}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("UserHome")}>
                 <Image style={styles.icon} source={bottomBar.home} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
+            <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("MyRequest")}>
                 <Image style={styles.icon} source={bottomBar.message} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconContainer}>

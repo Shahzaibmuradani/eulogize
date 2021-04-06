@@ -13,10 +13,12 @@ const UserSettings = ({navigation}) => {
         <SafeAreaView >
            
             <View style={{padding:20}}>
-                <TouchableOpacity style={[styles.rows]} onPress={()=>setToggle(!toggle)}>
-                    <Text style={styles.text}>NOTIFICATION</Text>
-                    <Image source ={ toggle ? toggle_on_icon :toggle_off_icon} style={styles.notification_image}/>
-                </TouchableOpacity>
+                <View style={[styles.rows]} >
+                        <Text style={styles.text}>NOTIFICATION</Text>
+                    <TouchableOpacity onPress={()=>setToggle(!toggle)}>
+                        <Image source ={ toggle ? toggle_on_icon :toggle_off_icon} style={styles.notification_image}/>
+                    </TouchableOpacity>
+                </View>
                 <Divider/>
 
                 <TouchableOpacity style={styles.rows}>

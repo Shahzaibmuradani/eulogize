@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, Text, View,  ScrollView,Image} from 'react-native';
+import {SafeAreaView, Text, View,  ScrollView,Image, ImageBackground, TouchableOpacity} from 'react-native';
 import Input from '../../../components/Input'
 import { RadioButton } from 'react-native-paper';
-import {image_placeholder} from '../../../assets/images/Images'
+import {image_placeholder, plus_icon, box_icon, attachment_icon} from '../../../assets/images/Images'
 import Button from '../../../components/BorderButton';
 import ModalComponent from '../../../components/Modal'
 import {
@@ -53,14 +53,14 @@ const DonationForm = ({navigation}) => {
                 />
                 { servicesToggle &&
                 <View style={styles.listSection}>
-                    <View style={{flexDirection:'row',alignItems:'center', paddingHorizontal:10, paddingVertical:10}}>
-                        <Text style={{width:"40%"}}>
+                    <View style={styles.listChild}>
+                        <Text style={styles.w40}>
                             Burial
                         </Text>
-                        <View style={{width:"30%", alignItems:'flex-end'}}>
+                        <View style={styles.w30}>
                             <Text>$6000</Text>
                         </View>
-                        <View style={{ width:"30%", alignItems:'flex-end'}}>
+                        <View style={styles.w30}>
                             <RadioButton.Android
                                 value="first"
                                 status={ checked === 'first' ? 'checked' : 'unchecked' }
@@ -70,14 +70,14 @@ const DonationForm = ({navigation}) => {
                         </View>
                         
                     </View>
-                    <View style={{flexDirection:'row',alignItems:'center', paddingHorizontal:10, paddingVertical:10}}>
-                        <Text style={{width:"40%"}}>
+                    <View style={styles.listChild}>
+                        <Text style={styles.w40}>
                             Cremation
                         </Text>
-                        <View style={{width:"30%", alignItems:'flex-end'}}>
+                        <View style={styles.w30}>
                             <Text>$5000</Text>
                         </View>
-                        <View style={{ width:"30%", alignItems:'flex-end'}}>
+                        <View style={styles.w30}>
                             <RadioButton.Android
                                 value="first"
                                 status={ checked === 'second' ? 'checked' : 'unchecked' }
@@ -109,15 +109,18 @@ const DonationForm = ({navigation}) => {
                     placeholder={"Attachment"} 
                     value={attachments} 
                     onChangeText={(x)=> setAttachments(x)} 
-                    type={"location"}
+                    type={"attach"}
 
                 />
-                <View style={{paddingTop:20, flexDirection:'row', justifyContent:'space-evenly',}}>
-                    <Image source={image_placeholder} style={{height:50, width:50, resizeMode:'contain'}}/>
-                    <Image source={image_placeholder} style={{height:50, width:50, resizeMode:'contain'}}/>
-                    <Image source={image_placeholder} style={{height:50, width:50, resizeMode:'contain'}}/>
-                    <Image source={image_placeholder} style={{height:50, width:50, resizeMode:'contain'}}/>
-
+                <View style={styles.galleryContainer}>
+                    <Image source={image_placeholder} style={styles.imageGallery}/>
+                    <Image source={image_placeholder} style={styles.imageGallery}/>
+                    <Image source={image_placeholder} style={styles.imageGallery}/>
+                    <ImageBackground source={box_icon} style={[styles.imageGallery, styles.alignJustify]}>
+                        <TouchableOpacity>
+                        <Image source={plus_icon} style={styles.plus_icon}/>
+                        </TouchableOpacity>
+                    </ImageBackground>
                 </View>
                 <View style={{paddingTop: 20, paddingBottom:40, }}>
                 <Button

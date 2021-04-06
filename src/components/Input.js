@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet,Image } from 'react-native';
-import { dropdown_icon, location_icon } from "../assets/images/Images";
+import { dropdown_icon, location_icon, attachment_icon } from "../assets/images/Images";
 import { TextInput } from 'react-native-gesture-handler';
 import Divider from './Divider';
 
@@ -28,8 +28,16 @@ export default ({onPress, style, text, textStyle, type, value, placeholder,onCha
                     <TouchableOpacity style={styles.w20}
                     onPress={onPress}>
                         <Image 
-                        source={location_icon} 
-                        style={styles.icon}/>
+                            source={location_icon} 
+                            style={styles.icon}/>
+                    </TouchableOpacity>
+                }
+                { type === "attachment" &&
+                    <TouchableOpacity style={styles.w20}
+                    onPress={onPress}>
+                        <Image 
+                            source={attachment_icon} 
+                            style={styles.icon}/>
                     </TouchableOpacity>
                 }
             </View>
@@ -58,8 +66,8 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     icon:{
-        height:15, 
-        width:15, 
+        height:18, 
+        width:18, 
         alignSelf:'center', 
         resizeMode:'contain'
     }

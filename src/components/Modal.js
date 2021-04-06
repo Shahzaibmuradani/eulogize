@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image, Modal, TextComponent} from 'react-native';
-import {burger_icon,home_icon} from '../assets/images/Images'
+import { View, Text, StyleSheet, Dimensions, Image, Modal, TouchableOpacity, Touchable} from 'react-native';
+import {burger_icon,home_icon, fb_icon, insta_icon, whatsapp_icon} from '../assets/images/Images'
 import Button from '../components/SolidButton'
 const SWidth = Dimensions.get('window').width;
 const SHeight =  Dimensions.get('window').height;
 
-const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,ButtonStyle, navigation})=>{
+const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,ButtonStyle,socialShare, navigation})=>{
     
     return(
         <View>
@@ -18,17 +18,33 @@ const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,
                 }}>
 
                 <View style={styles.modal}>
-                    <View style={{backgroundColor: "white", borderRadius: 20,padding: 35, 
-                    alignItems: "center",shadowColor: "#000",
-                    shadowOffset: {width: 0,height: 2},
-                    shadowOpacity: 0.25,
-                    shadowRadius: 4,elevation: 5}}>
-                        <Text style={styles.text}>{text1}</Text>
-                        <Text style={styles.text}>{text2}</Text>
+                    <View style={styles.modalChild}>
                         {
-                            showButton &&
-                            <Button text={ButtonText} onPress={onPress} style={ButtonStyle}/>
+                            socialShare ?
+                                <View style={{flexDirection:'row', justifyContent:'space-around'}}>
+                                    <TouchableOpacity onPress={onPress}>
+                                        <Image source={fb_icon} style={{height:40, width:40, resizeMode:'contain', margin:15}}/>
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity onPress={onPress}>
+                                        <Image source={insta_icon} style={{height:40, width:40, resizeMode:'contain', margin:15}}/>
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity onPress={onPress}>
+                                        <Image source={whatsapp_icon} style={{height:40, width:40, resizeMode:'contain', margin:15}}/>
+                                    </TouchableOpacity>
+                                </View>
+                            :
+                            <View>
+                                <Text style={styles.text}>{text1}</Text>
+                                <Text style={styles.text}>{text2}</Text>
+                                {
+                                    showButton &&
+                                    <Button text={ButtonText} onPress={onPress} style={ButtonStyle}/>
+                                }
+                            </View>
                         }
+                       
                     </View>
                 </View>
             </Modal>
@@ -48,5 +64,12 @@ const styles= StyleSheet.create({
         width:SWidth/1.2,
         marginTop: 
         SHeight/2.5
-    }
+    },
+    modalChild:{
+        backgroundColor: "white", 
+        borderRadius: 20,padding: 35, 
+        alignItems: "center",shadowColor: "#000",
+        shadowOffset: {width: 0,height: 2},
+        shadowOpacity: 0.25,
+        shadowRadius: 4,elevation: 5}
 })

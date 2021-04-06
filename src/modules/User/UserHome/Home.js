@@ -27,7 +27,7 @@ const UserHome = ({navigation}) => {
                 text={"REQUEST FOR DONATION"} 
                 style={{backgroundColor:RedColor, width:'100%', marginBottom:30}}/>
             <Button
-                onPress={()=>{console.log('submit')}}
+                onPress={()=>{navigation.navigate("RequestFuneral")}}
                 textStyle={{color:RedColor, fontWeight:'normal'}}
                 text={"DONATION"} 
                 style={{width:'100%'}}/>
