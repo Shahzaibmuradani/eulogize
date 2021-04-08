@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, Text, View, Image, FlatList} from 'react-native';
-import {PlatformOS,SHeight} from '../../../utils/Constants';
+import {PlatformOS, SHeight, StatusBarColor} from '../../../utils/Constants';
 import {funeral_home_pic} from '../../../assets/images/Images';
 import DetailBox from '../../../components/DetailBox'
+import Header from '../../../components/Header';
 
 
   const DATA = [
@@ -56,9 +57,7 @@ import DetailBox from '../../../components/DetailBox'
   ];
 const MyRequest = ({navigation}) => {
     const renderItem =({item, index}) => (
-      
         <View>
-            
             <DetailBox data={item} index={index} navigation={navigation} myRequest/>
         </View>
     );
@@ -66,18 +65,23 @@ const MyRequest = ({navigation}) => {
     const [dataSource, setDataSource] = useState(DATA);
 
     return(
-        <SafeAreaView style={{ flex: 1, backgroundColor:"#FFFFFF" }}>
-            {PlatformOS == "android" &&<Header/>}
-
-            <View  style={{flex:1,backgroundColor:'#fff',minHeight:SHeight}}>
-            <FlatList
-              contentContainerStyle={{ paddingBottom: SHeight/4 }}
-              data={dataSource}
-              renderItem={renderItem}
-              keyExtractor={item => item.id}
-              showsVerticalScrollIndicator={false}
-            />
-
+        <SafeAreaView style={{ flex: 1, backgroundColor:StatusBarColor }}>
+            <View  style={{flex:1,minHeight:SHeight}}>
+                <Header
+                    PlatformOS={PlatformOS}
+                    backIcon={PlatformOS == "ios"}
+                    onLeftIconPress={()=>{}}
+                    searchBar={false}
+                    title="MY REQUEST"
+                    navigation={navigation}
+                />
+                <FlatList
+                    contentContainerStyle={{ paddingBottom: SHeight/4, backgroundColor:'#fff', paddingTop:10 }}
+                    data={dataSource}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id}
+                    showsVerticalScrollIndicator={false}
+                />
           </View>
         </SafeAreaView>
     )

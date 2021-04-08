@@ -19,7 +19,7 @@ const Header = ({
         <View style={styles.container}>
             <View style={[styles.navContainer, {marginBottom:searchBar ? 20 : 0}]}>
                 <View style={{marginRight: PlatformOS == "android" ? 20 : 0 }}>
-                    <TouchableOpacity onPress={()=> backIcon ? navigation.goBack() : console.log("open drawerr") }>
+                    <TouchableOpacity onPress={()=> backIcon ? navigation.goBack() : navigation.openDrawer() }>
                         <Image source={backIcon ? white_back_icon :burger_icon} style={styles.icons}/>
                     </TouchableOpacity>
                 </View>

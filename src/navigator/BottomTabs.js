@@ -6,7 +6,7 @@ export default ({navigation})=>{
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("UserHome")}>
-                <Image style={styles.icon} source={bottomBar.home} />
+                <Image style={[styles.icon, {width:23}]} source={bottomBar.home} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("MyRequest")}>
                 <Image style={styles.icon} source={bottomBar.message} />
@@ -40,7 +40,7 @@ const styles= StyleSheet.create({
         alignItems:'center'
     },
     icon:{
-        width:20,
+        width:33,
         height:35
     },
     text:{

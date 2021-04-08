@@ -47,7 +47,6 @@ const TabNavigator = ()=>{
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
-
         </Tab.Navigator>
     )
 }
@@ -56,6 +55,10 @@ const TabNavigator2 = ()=>{
     return(
         <Tab.Navigator tabBar={props => <BottomBar {...props}/>}>
             <Tab.Screen name="FuneralHome" component={FuneralHome} />
+            <Tab.Screen name="DonationForm" component={DonationForm} />
+            <Tab.Screen name="UserSettings" component={UserSettings} />
+            <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
+            <Tab.Screen name="MyRequest" component={MyRequest} />
         </Tab.Navigator>
     )
 }
@@ -66,6 +69,7 @@ const DrawerNavigator = ()=>{
     return(
         <Drawer.Navigator drawerContent={(props)=> <DrawerView {...props}/>} initialRouteName="UserHome">
             <Drawer.Screen name="UserHome" component={UserHome} />
+            <Drawer.Screen name="MyRequest" component={MyRequest} />
         </Drawer.Navigator>
     )
 }

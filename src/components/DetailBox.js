@@ -29,7 +29,6 @@ export default ({data, index, navigation, requestFuneral, myRequest})=>{
                 <View style={styles.w50}>
                     <Text style={styles.name}>{data.name}</Text>
                     <Text style={styles.funeral_home_name}>{data.funeralHome}</Text>
-                    
                 </View>
 
                 <View style={styles.w30}>
@@ -83,7 +82,7 @@ export default ({data, index, navigation, requestFuneral, myRequest})=>{
                             <Text>{data.service} {data.amount}</Text>
                         </View>
 
-                        <View style={styles.w40}>
+                        <View style={[styles.w40, {justifyContent:'space-between', alignItems:'center', flexDirection:'row'}]}>
                             <Image source ={share_btn} style={styles.share_btn}/>
                         </View>
                     </View>
