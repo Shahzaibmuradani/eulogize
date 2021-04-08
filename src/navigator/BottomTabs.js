@@ -17,7 +17,6 @@ export default ({navigation})=>{
             <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("UserSettings")}>
                 <Image style={styles.icon} source={bottomBar.settings} />
             </TouchableOpacity>
-
         </View>
     )
 }

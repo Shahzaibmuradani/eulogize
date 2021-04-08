@@ -2,12 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView,View, FlatList, Image} from 'react-native';
 import {
   PlatformOS,
-  SHeight
+  SHeight,
+  StatusBarColor
 } from '../../../utils/Constants';
 import {funeral_home_pic} from '../../../assets/images/Images'
 import Header from '../../../components/Header';
 import DetailBox from '../../../components/DetailBox'
 import styles from './styles';
+import Calander from '../../../components/calander';
 
 const DATA = [
   { 
@@ -89,14 +91,30 @@ const RequestFuneral = ({navigation}) => {
           <DetailBox data={item} index={index} navigation={navigation} requestFuneral/>
       </View>
   );
-const [dataSource, setDataSource] = useState(DATA);
+    const [dataSource, setDataSource] = useState(DATA);
+    const [showCalander, setShowCalander] = useState(false)
 
     return (
       //AHSAN BHAI HEADER KA NAAM : "DONATION REQUESTS" RAKHNA"
-      <SafeAreaView style={{ flex: 1, backgroundColor:"#FFFFFF" }}>
-        {PlatformOS == "android" &&<Header/>}
-        
+      <SafeAreaView style={{ flex: 1, backgroundColor:StatusBarColor }}>
+          <Header
+              PlatformOS={PlatformOS}
+              backIcon={PlatformOS == "ios"}
+              onLeftIconPress={()=>{}}
+              searchBar={false}
+              title="VIEW REQUEST"
+              navigation={navigation}
+              searchBar
+              onSearch={()=>{}}
+              onRightIconPress={()=>{setShowCalander(true)}}
+          />
           <View  style={styles.container}>
+            <Calander onChange={(x)=>{
+              setShowCalander(false)
+              console.log(x)
+              }} 
+              show={showCalander}
+              onHide={()=>{setShowCalander(false)}} />
             <FlatList
               contentContainerStyle={{ paddingBottom: SHeight/4 }}
               data={dataSource}

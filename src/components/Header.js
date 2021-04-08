@@ -30,7 +30,7 @@ const Header = ({
 
                 <View>
                     <TouchableOpacity>
-                        {PlatformOS == "ios" ? null : RightComonent ? <RightComonent/> : <Image source={backIcon? null:home_icon} style={styles.icons}/>}
+                        {RightComonent ? <RightComonent/> : <Image source={backIcon? null:home_icon} style={styles.icons}/>}
                     </TouchableOpacity>
                 </View>
             </View>

@@ -27,7 +27,7 @@ const UserSettings = ({navigation}) => {
                 </TouchableOpacity>
                 <Divider/>
 
-                <TouchableOpacity style={styles.rows}>
+                <TouchableOpacity onPress={()=>navigation.navigate('Profile')} style={styles.rows}>
                     <Text style={styles.text}>PROFILE</Text>
                     <Image source ={go_right_icon} style={styles.image}/>
                 </TouchableOpacity>

@@ -15,7 +15,13 @@ import DrawerView from './Drawer';
 import DonationForm from '../modules/User/DonationForm/DonationForm'
 import UserSettings from '../modules/User/Setting/Setting'
 import RequestFuneral from '../modules/User/RequestFuneral/RequestFuneral'
-import MyRequest from '../modules/User/MyRequest/MyRequest'
+import MyRequest from '../modules/User/MyRequest/MyRequest';
+import ViewRequest from '../modules/Funeral/ViewRequest/ViewRequest';
+import History from '../modules/Funeral/History/History';
+import Profile from '../modules/Funeral/Profile/Profile';
+
+
+
 
 
 function Navigator({setConnetion, isConnected}) {
@@ -47,6 +53,8 @@ const TabNavigator = ()=>{
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
+            <Tab.Screen name="Profile" component={Profile} />
+
         </Tab.Navigator>
     )
 }
@@ -58,7 +66,8 @@ const TabNavigator2 = ()=>{
             <Tab.Screen name="DonationForm" component={DonationForm} />
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
-            <Tab.Screen name="MyRequest" component={MyRequest} />
+            <Tab.Screen name="MyRequest" component={ViewRequest} />
+            <Tab.Screen name="Profile" component={Profile} />
         </Tab.Navigator>
     )
 }
@@ -79,6 +88,7 @@ const DrawerNavigator2 = ()=>{
     return(
         <Drawer.Navigator drawerContent={(props)=> <DrawerView {...props}/>} initialRouteName="FuneralHome">
             <Drawer.Screen name="FuneralHome" component={FuneralHome} />
+            <Drawer.Screen name="MyRequest" component={ViewRequest} />
         </Drawer.Navigator>
     )
 }

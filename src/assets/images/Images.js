@@ -23,6 +23,8 @@ export const fb_icon = require('./facebook.png')
 export const insta_icon = require('./insta.png')
 export const whatsapp_icon = require('./whatsapp.png')
 export const message_icon = require('./message_icon.png')
+export const profile_pic = require('./profile_pic.jpg')
+
 
 export const bottomBar = {
     home:require('./bottomBarImages/home.png'),

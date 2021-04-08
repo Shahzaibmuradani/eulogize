@@ -66,10 +66,10 @@ import Header from '../../../components/Header';
     
     
   ];
-const MyRequest = ({navigation}) => {
+const ViewRequest = ({navigation}) => {
     const renderItem =({item, index}) => (
         <View>
-            <DetailBox data={item} index={index} navigation={navigation} myRequest/>
+            <DetailBox progressBar data={item} index={index} navigation={navigation} myRequest/>
         </View>
     );
 
@@ -83,7 +83,7 @@ const MyRequest = ({navigation}) => {
                     backIcon={PlatformOS == "ios"}
                     onLeftIconPress={()=>{}}
                     searchBar={false}
-                    title="MY REQUEST"
+                    title="VIEW REQUEST"
                     navigation={navigation}
                 />
                 <FlatList
@@ -98,4 +98,4 @@ const MyRequest = ({navigation}) => {
     )
 }
 
-export default MyRequest;
+export default ViewRequest;
