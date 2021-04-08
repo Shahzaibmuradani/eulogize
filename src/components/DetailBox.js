@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Image, VirtualizedList } from 'react-native';
-import {SWidth, StatusBarColor, RedColor, fontWhite, } from '../utils/Constants'
+import {SWidth, StatusBarColor, RedColor, fontWhite, YellowColor,PurpleColor} from '../utils/Constants'
 import Button from '../components/SolidButton'
 import {share_btn, message_icon} from '../assets/images/Images'
 import ModalComponent from '../components/Modal'
-
 
 
 export default ({data, index, navigation, requestFuneral, myRequest})=>{
@@ -31,11 +30,19 @@ export default ({data, index, navigation, requestFuneral, myRequest})=>{
                     <Text style={styles.funeral_home_name}>{data.funeralHome}</Text>
                     
                 </View>
-
-                <View style={styles.w30}>
-                    <Text style={styles.time}>{data.time}</Text>
-                    <Text style={styles.date}>Exp - {data.expiry_date}</Text>
-                </View>
+                {
+                    data.time && data.expiry_date ?
+                    <View style={styles.w30}>
+                        <Text style={styles.time}>{data.time}</Text>
+                        <Text style={styles.date}>Exp - {data.expiry_date}</Text>
+                    </View> 
+                    :
+                    <View style={styles.w30}>
+                        <Text style={styles.time}>{data.expiry_date}</Text>
+                       
+                    </View> 
+                }
+                
             </View>
             <View style={[styles.w80,{alignSelf:'flex-end'}]}>
                 <Text numberOfLines={2} style={styles.desc}>{data.details}</Text>
@@ -45,7 +52,7 @@ export default ({data, index, navigation, requestFuneral, myRequest})=>{
                 requestFuneral &&
                 <View style={styles.child2}>
                     <View style={[styles.w20,styles.justifyCenter]}>
-                        <TouchableOpacity style={styles.imagebox} onPress={()=>setVisibility(!visibility)}>
+                        <TouchableOpacity style={styles.imagebox} onPress={()=>{setVisibility(!visibility)}}>
                             <Image source={share_btn} style={styles.share_img}/>
                         </TouchableOpacity>
                     </View>
@@ -73,18 +80,26 @@ export default ({data, index, navigation, requestFuneral, myRequest})=>{
                     </View>
 
                     <View style={[styles.w80, {flexDirection:'row'}]}>
-                        <View style={styles.w20}>
-                            <TouchableOpacity style={styles.imagebox2}>
+                        <View style={{width:"10%"}}>
+                            <TouchableOpacity style={styles.imagebox2} onPress={()=>setVisibility(!visibility)}>
                                 <Image source ={share_btn} style={styles.share_btn}/>
                             </TouchableOpacity>
                         </View>
 
-                        <View style={styles.w40}>
-                            <Text>{data.service} {data.amount}</Text>
+                        <View style={[styles.w50, {justifyContent:'center', alignItems:'flex-end'}]}>
+                            <Text style={styles.serviceText}>{data.service} {data.amount}</Text>
                         </View>
 
-                        <View style={styles.w40}>
-                            <Image source ={share_btn} style={styles.share_btn}/>
+                        <View style={[styles.w40, {justifyContent:'center', alignItems:'center'}]}>
+                            {
+                                data.status ===  "ACCEPTED" ?
+                                    <Text style={styles.acceptedText}>ACCEPTED</Text>
+                                :
+                                data.status === "DECLINE" ?
+                                    <Text style={styles.declineText}>DECLINE</Text>
+                                :
+                                    <Text style={styles.pendingText}>PENDING</Text>
+                            }
                         </View>
                     </View>
                 </View>
@@ -161,6 +176,9 @@ const styles = StyleSheet.create({
     w40:{
         width:"40%",
     },
+    w60:{
+        width:"60%"
+    },
     w80:{
         width:"80%",
     }, 
@@ -169,12 +187,12 @@ const styles = StyleSheet.create({
     },
     imagebox:{
         backgroundColor:"#FFFFFF",
-        padding:10,
+        padding:8,
         borderRadius:5,
     },
     imagebox2:{
         backgroundColor:"#FFFFFF",
-        padding:10,
+        padding:8,
         borderRadius:5,
         alignSelf:'flex-start'
     },
@@ -197,6 +215,24 @@ const styles = StyleSheet.create({
         height:20,
         width:20, 
         resizeMode:'contain'
+    },
+    acceptedText:{
+        fontFamily:"Roboto-Bold",
+        fontSize:14, 
+        color:RedColor
+    },
+    declineText:{
+        fontFamily:"Roboto-Bold",
+        fontSize:14,
+        color:PurpleColor
+    },
+    pendingText:{
+        fontFamily:"Roboto-Bold",
+        fontSize:14,
+        color:YellowColor
+    },
+    serviceText:{
+        fontFamily:"Roboto-Regular"
     }
     
 })
