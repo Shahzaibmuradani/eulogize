@@ -8,7 +8,7 @@ export const OrangeColor ="#FB501C";
 export const YellowColor ="#F8B634";
 export const CreamColor ="#FFEBD2";
 export const lightPink ="#C295B2";
-
+export const PurpleColor = "#834191"
 
 
 export const SWidth = Dimensions.get('window').width;
