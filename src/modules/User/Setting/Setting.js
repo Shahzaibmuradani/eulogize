@@ -33,13 +33,13 @@ const UserSettings = ({navigation}) => {
                 </TouchableOpacity>
                 <Divider/>
 
-                <TouchableOpacity style={styles.rows}>
+                <TouchableOpacity onPress={()=>navigation.navigate('AboutUs')} style={styles.rows}>
                     <Text style={styles.text}>ABOUT US</Text>
                     <Image source ={go_right_icon} style={styles.image}/>
                 </TouchableOpacity>
                 <Divider/>
 
-                <TouchableOpacity style={styles.rows}>
+                <TouchableOpacity onPress={()=>navigation.navigate('PrivacyPolicy')} style={styles.rows}>
                     <Text style={styles.text}>PRIVACY POLICY</Text>
                     <Image source ={go_right_icon} style={styles.image}/>
                 </TouchableOpacity>

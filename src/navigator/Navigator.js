@@ -19,8 +19,10 @@ import MyRequest from '../modules/User/MyRequest/MyRequest';
 import ViewRequest from '../modules/Funeral/ViewRequest/ViewRequest';
 import History from '../modules/Funeral/History/History';
 import Profile from '../modules/Funeral/Profile/Profile';
-
-
+import UserProfile from '../modules/User/Profile/Profile';
+import PrivacyPolicy from '../modules/PrivacyPolicy/PrivacyPolicy';
+import FAQ from '../modules/FAQ/FAQ';
+import AboutUs from '../modules/AboutUs/AboutUs';
 
 
 
@@ -53,8 +55,10 @@ const TabNavigator = ()=>{
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
-            <Tab.Screen name="Profile" component={Profile} />
-
+            <Tab.Screen name="Profile" component={UserProfile} />
+            <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
+            <Tab.Screen name="FAQ" component={FAQ} />
+            <Tab.Screen name="AboutUs" component={AboutUs} />
         </Tab.Navigator>
     )
 }
@@ -68,6 +72,10 @@ const TabNavigator2 = ()=>{
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={ViewRequest} />
             <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
+            <Tab.Screen name="FAQ" component={FAQ} />
+            <Tab.Screen name="AboutUs" component={AboutUs} />
+
         </Tab.Navigator>
     )
 }

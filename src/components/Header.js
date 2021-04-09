@@ -29,9 +29,7 @@ const Header = ({
                 </View>
 
                 <View>
-                    <TouchableOpacity>
-                        {RightComonent ? <RightComonent/> : <Image source={backIcon? null:home_icon} style={styles.icons}/>}
-                    </TouchableOpacity>
+                    {RightComonent ? <RightComonent/> : <Image source={backIcon? null:home_icon} style={styles.icons}/>}
                 </View>
             </View>
             {searchBar && <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%'}}>

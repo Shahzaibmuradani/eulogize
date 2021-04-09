@@ -42,21 +42,4 @@ export default StyleSheet.create({
     formImages:{
         height:15, width:15, alignSelf:'center',resizeMode:'contain'
     },
-    dropdownContainer:{
-        height: 40,
-        justifyContent:'space-between',
-        alignItems:'center',
-        width:'100%',
-        flexDirection:'row',
-        paddingHorizontal:5
-    },
-    dropdownText: {
-        fontWeight:'bold',
-        color:'#000'
-    },
-    dropdownContentContainer: {
-        width:'100%',
-        padding:10,
-        backgroundColor:'#FAFAFA'
-    }
 })

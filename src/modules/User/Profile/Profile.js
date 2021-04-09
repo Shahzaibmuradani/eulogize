@@ -7,15 +7,13 @@ import {
 } from '../../../utils/Constants';
 import Header from '../../../components/Header';
 import styles from './styles';
-import {eye, edit_icon, dropdown_icon} from '../../../assets/images/Images';
+import {eye, edit_icon} from '../../../assets/images/Images';
 import Divider from '../../../components/Divider'
 import ImagePicker from '../../../utils/ImagePicker';
 
 const Profile = ({navigation}) => {
     const [showCalander, setShowCalander] = useState(false)
     const [isEditable, setIsEditable] = useState(false)
-    const [showDropDown, setShowDropDown] = useState(false)
-
 
     const [avatar, setAvatar] = useState({uri:""})
     return (
@@ -58,12 +56,12 @@ const Profile = ({navigation}) => {
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
-              <View style={{flexDirection:'row'}}>
+            <View style={{flexDirection:'row'}}>
                   <View style={styles.w80}>
                       <TextInput
                         editable={isEditable}
                         style={{height: 40,color:"black"}}
-                        placeholder="ABC Funeral Home"
+                        placeholder="First Name"
                         placeholderTextColor={'grey'}
                       />
                   </View>
@@ -72,58 +70,19 @@ const Profile = ({navigation}) => {
               </View>
               <Divider styles={{marginBottom:20}}/>
 
-              <TouchableOpacity 
-                disabled={!isEditable} 
-                onPress={()=>setShowDropDown(!showDropDown)} 
-                style={styles.dropdownContainer}>
-                <Text style={styles.dropdownText}>Services and Price</Text>
-                <Image source={dropdown_icon}/>
-              </TouchableOpacity>
-
-              {showDropDown && 
-              <View style={styles.dropdownContentContainer}>
-                  <View style={{width:'100%', flexDirection:'row', justifyContent:'space-between'}}>
-                    <View style={{width:'60%'}}>
-                        <TextInput
-                          editable={isEditable}
-                          style={{height: 40,color:"black"}}
-                          placeholder="Burial"
-                          placeholderTextColor={'grey'}
-                        />
-                      <Divider/>
-                    </View>
-                    <View style={{width:'30%'}}>
-                        <TextInput
-                          editable={isEditable}
-                          style={{height: 40,color:"black"}}
-                          placeholder="$5000"
-                          placeholderTextColor={'grey'}
-                        />
-                      <Divider/>
-                    </View>
+              <View style={{flexDirection:'row'}}>
+                  <View style={styles.w80}>
+                      <TextInput
+                        editable={isEditable}
+                        style={{height: 40,color:"black"}}
+                        placeholder="Last Name"
+                        placeholderTextColor={'grey'}
+                      />
                   </View>
-
-                  <View style={{width:'100%', flexDirection:'row', justifyContent:'space-between'}}>
-                    <View style={{width:'60%'}}>
-                        <TextInput
-                          editable={isEditable}
-                          style={{height: 40,color:"black"}}
-                          placeholder="Cremation"
-                          placeholderTextColor={'grey'}
-                        />
-                      <Divider/>
-                    </View>
-                    <View style={{width:'30%'}}>
-                        <TextInput
-                          editable={isEditable}
-                          style={{height: 40,color:"black"}}
-                          placeholder="$6000"
-                          placeholderTextColor={'grey'}
-                        />
-                      <Divider/>
-                    </View>
+                  <View style={styles.w20}>
                   </View>
-              </View>}
+              </View>
+              <Divider styles={{marginBottom:20}}/>
 
               <View style={{flexDirection:'row'}}>
                   <View style={styles.w80}>

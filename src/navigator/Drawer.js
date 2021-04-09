@@ -98,7 +98,6 @@ const styles= StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         borderBottomColor:lightPink,
-        // opacity:0.8
     },
     rowHeading: {
         fontSize:HeadingMedium
