@@ -19,6 +19,8 @@ import MyRequest from '../modules/User/MyRequest/MyRequest';
 import ViewRequest from '../modules/Funeral/ViewRequest/ViewRequest';
 import ViewPayments from '../modules/Funeral/ViewPayments/ViewPayments';
 import ViewPaymentDetails from '../modules/Funeral/ViewPaymentDetails/ViewPaymentDetails';
+import RequestDetail from '../modules/User/RequestDetail/RequestDetail';
+
 import History from '../modules/Funeral/History/History';
 import Profile from '../modules/Funeral/Profile/Profile';
 import UserProfile from '../modules/User/Profile/Profile';
@@ -43,6 +45,7 @@ function Navigator({setConnetion, isConnected}) {
                 <Stack.Screen name="FuneralHome" component={PlatformOS == "android" ? DrawerNavigator2 :TabNavigator2} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
                 <Stack.Screen name="ViewPaymentDetails" component={ViewPaymentDetails} />
+                <Stack.Screen name="RequestDetail" component={RequestDetail} />
 
             </Stack.Navigator>
         </NavigationContainer>

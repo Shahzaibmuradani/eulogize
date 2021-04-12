@@ -87,8 +87,7 @@ const RequestFuneral = ({navigation}) => {
     const renderItem =({item, index}) => (
       
       <View>
-          
-          <DetailBox data={item} index={index} navigation={navigation} requestFuneral/>
+          <DetailBox onDonationPress={()=>navigation.navigate('RequestDetail')} data={item} index={index} navigation={navigation} requestFuneral/>
       </View>
   );
     const [dataSource, setDataSource] = useState(DATA);

@@ -7,7 +7,7 @@ import ModalComponent from '../components/Modal';
 import { ProgressBar, Colors } from 'react-native-paper';
 
 
-export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, detailPrice})=>{
+export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, detailPrice, onDonationPress, disableBottomManu})=>{
     const [visibility, setVisibility] = React.useState(false)
     console.log(data, ' asdasdasdsad')
 
@@ -45,12 +45,13 @@ export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, 
                 </View>
                 
             </View>
-            <View style={[styles.w80,{alignSelf:'flex-end'}]}>
+            <View style={[styles.w80,{alignSelf:'flex-end', marginBottom:disableBottomManu ? 20 : 0}]}>
                 <Text numberOfLines={2} style={styles.desc}>{data.details}</Text>
             </View>
 
+
             {
-                requestFuneral &&
+                requestFuneral && !disableBottomManu &&
                 <View style={styles.child2}>
                     <View style={[styles.w20,styles.justifyCenter]}>
                         <TouchableOpacity style={styles.imagebox} onPress={()=>{setVisibility(!visibility)}}>
@@ -64,7 +65,7 @@ export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, 
 
                     <View style={[styles.w40, {paddingRight:10, justifyContent:'center'}]}>
                     <Button
-                        onPress={()=>{console.log("submit")}}
+                        onPress={onDonationPress}
                         textStyle={styles.btnText}
                         text={"DONATION"} 
                         style={styles.btn}/>
@@ -72,7 +73,7 @@ export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, 
                 </View>
             }
             {
-                myRequest && 
+                myRequest && !disableBottomManu &&
                 <View style={{flexDirection:'row', paddingBottom:10, paddingTop:10}}>
                     {!progressBar  ? <>
                         <View style={[styles.w20, ]}>
