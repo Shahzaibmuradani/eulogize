@@ -7,7 +7,7 @@ import ModalComponent from '../components/Modal';
 import { ProgressBar, Colors } from 'react-native-paper';
 
 
-export default ({data, index, navigation, requestFuneral, myRequest, progressBar})=>{
+export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, detailPrice})=>{
     const [visibility, setVisibility] = React.useState(false)
     console.log(data, ' asdasdasdsad')
 
@@ -29,7 +29,7 @@ export default ({data, index, navigation, requestFuneral, myRequest, progressBar
                     <Text style={styles.name}>{data.name}</Text>
                     <Text style={styles.funeral_home_name}>{data.funeralHome}</Text>
                 </View>
-                {!progressBar && (
+                {!progressBar && !isDetail && (
                     data.time && data.expiry_date ?
                     <View style={styles.w30}>
                         <Text style={styles.time}>{data.time}</Text>
@@ -40,6 +40,9 @@ export default ({data, index, navigation, requestFuneral, myRequest, progressBar
                         <Text style={styles.time}>{data.expiry_date}</Text>
                     </View> )
                 }
+                <View style={styles.w30}>
+                    {isDetail && <Text style={styles.date}>Exp - {data.expiry_date}</Text>}
+                </View>
                 
             </View>
             <View style={[styles.w80,{alignSelf:'flex-end'}]}>
@@ -73,23 +76,29 @@ export default ({data, index, navigation, requestFuneral, myRequest, progressBar
                 <View style={{flexDirection:'row', paddingBottom:10, paddingTop:10}}>
                     {!progressBar  ? <>
                         <View style={[styles.w20, ]}>
-                            <TouchableOpacity style={styles.imagebox}>
+                            {!isDetail && <TouchableOpacity style={styles.imagebox}>
                                 <Image source ={message_icon} style={styles.share_btn}/>
-                            </TouchableOpacity>
+                            </TouchableOpacity>}
                         </View>
 
                         <View style={[styles.w80, {flexDirection:'row'}]}>
-                            <View style={{width:"10%"}}>
+                            {!isDetail&&  <View style={{width:"10%"}}>
                                 <TouchableOpacity style={styles.imagebox2} onPress={()=>setVisibility(!visibility)}>
                                     <Image source ={share_btn} style={styles.share_btn}/>
                                 </TouchableOpacity>
+                            </View>}
+
+                            <View style={{justifyContent:isDetail ? 'space-between' : 'center', flexDirection:'row', width:isDetail ?'100%' : '50%', alignItems:'center'}}>
+                                {!isDetail ? <Text style={styles.serviceText}>{data.service} {data.amount}</Text>
+                                :
+                                <Text style={{fontWeight:'bold'}}>{`$${detailPrice}`}</Text>}
+                                 {isDetail && <View style={{flexDirection:'row', paddingRight:20}}>
+                                    <Text style={[styles.time, {marginRight:10, fontWeight:'bold'}]}>{data.expiry_date}</Text>
+                                    <Text style={[styles.time,{fontWeight:'bold'}]}>{data.time}</Text>
+                                 </View>}
                             </View>
 
-                            <View style={[styles.w50, {justifyContent:'center', alignItems:'flex-end'}]}>
-                                <Text style={styles.serviceText}>{data.service} {data.amount}</Text>
-                            </View>
-
-                            <View style={[styles.w40, {justifyContent:'center', alignItems:'center'}]}>
+                            {!isDetail && <View style={[styles.w40, {justifyContent:'center', alignItems:'center',}]}>
                                 {
                                     data.status ===  "ACCEPTED" ?
                                         <Text style={styles.acceptedText}>ACCEPTED</Text>
@@ -99,7 +108,7 @@ export default ({data, index, navigation, requestFuneral, myRequest, progressBar
                                     :
                                         <Text style={styles.pendingText}>PENDING</Text>
                                 }
-                            </View>
+                            </View>}
                         </View>
                     </>: 
                     <>
@@ -135,7 +144,7 @@ const styles = StyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 5,
+            height: 2,
         },
         shadowOpacity: 0.38,
         shadowRadius: 5.00,

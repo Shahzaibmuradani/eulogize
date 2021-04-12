@@ -17,6 +17,8 @@ import UserSettings from '../modules/User/Setting/Setting'
 import RequestFuneral from '../modules/User/RequestFuneral/RequestFuneral'
 import MyRequest from '../modules/User/MyRequest/MyRequest';
 import ViewRequest from '../modules/Funeral/ViewRequest/ViewRequest';
+import ViewPayments from '../modules/Funeral/ViewPayments/ViewPayments';
+import ViewPaymentDetails from '../modules/Funeral/ViewPaymentDetails/ViewPaymentDetails';
 import History from '../modules/Funeral/History/History';
 import Profile from '../modules/Funeral/Profile/Profile';
 import UserProfile from '../modules/User/Profile/Profile';
@@ -40,6 +42,8 @@ function Navigator({setConnetion, isConnected}) {
                 <Stack.Screen name="UserHome" component={PlatformOS == "android" ? DrawerNavigator :TabNavigator} />
                 <Stack.Screen name="FuneralHome" component={PlatformOS == "android" ? DrawerNavigator2 :TabNavigator2} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+                <Stack.Screen name="ViewPaymentDetails" component={ViewPaymentDetails} />
+
             </Stack.Navigator>
         </NavigationContainer>
       )
@@ -70,7 +74,7 @@ const TabNavigator2 = ()=>{
             <Tab.Screen name="DonationForm" component={DonationForm} />
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
-            <Tab.Screen name="MyRequest" component={ViewRequest} />
+            <Tab.Screen name="MyRequest" component={ViewPayments} />
             <Tab.Screen name="Profile" component={Profile} />
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
@@ -96,7 +100,7 @@ const DrawerNavigator2 = ()=>{
     return(
         <Drawer.Navigator drawerContent={(props)=> <DrawerView {...props}/>} initialRouteName="FuneralHome">
             <Drawer.Screen name="FuneralHome" component={FuneralHome} />
-            <Drawer.Screen name="MyRequest" component={ViewRequest} />
+            <Drawer.Screen name="MyRequest" component={ViewPayments} />
         </Drawer.Navigator>
     )
 }
