@@ -7,6 +7,8 @@ import {PlatformOS} from '../../../utils/Constants';
 import Header from '../../../components/Header';
 import DetailBox from '../../../components/DetailBox'
 import { ProgressBar } from 'react-native-paper';
+import Button from '../../../components/SolidButton'
+
 
 const RequestDetail = ({navigation}) => {
     return(
@@ -107,6 +109,17 @@ const RequestDetail = ({navigation}) => {
                     <Image style={styles.image} source={logo}/>
                     <Image style={styles.image} source={logo}/>
                 </View>
+                <Button 
+                    onPress={()=>{
+                        // if(userType == "user"){
+                        //     navigation.navigate("UserHome")
+                        // }else{
+                        //     navigation.navigate("FuneralHome")
+                        // }
+                    }}
+                    text={"DONATION"} 
+                    style={{marginBottom:40}}
+                />
 
             </ScrollView>
         </SafeAreaView>

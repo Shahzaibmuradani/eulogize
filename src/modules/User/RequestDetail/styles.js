@@ -22,11 +22,13 @@ export default StyleSheet.create({
     imagesContainer: {
         flexWrap:'wrap',
         flexDirection:'row',
-        width:'100%'
+        width:'100%',
+        marginBottom:20
     },
     image: {
         width:50,
         height:50,
-        marginRight:10
+        marginRight:10,
+        marginBottom:10
     }
 })
