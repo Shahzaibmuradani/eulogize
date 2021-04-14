@@ -24,6 +24,10 @@ export const insta_icon = require('./insta.png')
 export const whatsapp_icon = require('./whatsapp.png')
 export const message_icon = require('./message_icon.png')
 export const profile_pic = require('./profile_pic.jpg')
+export const card_logo = require('./card_logo.png')
+export const add_amount_doller = require('./add_amount_doller.png')
+
+
 
 
 export const bottomBar = {

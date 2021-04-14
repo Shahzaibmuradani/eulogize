@@ -110,13 +110,7 @@ const RequestDetail = ({navigation}) => {
                     <Image style={styles.image} source={logo}/>
                 </View>
                 <Button 
-                    onPress={()=>{
-                        // if(userType == "user"){
-                        //     navigation.navigate("UserHome")
-                        // }else{
-                        //     navigation.navigate("FuneralHome")
-                        // }
-                    }}
+                    onPress={()=>navigation.navigate('Payment')}
                     text={"DONATION"} 
                     style={{marginBottom:40}}
                 />

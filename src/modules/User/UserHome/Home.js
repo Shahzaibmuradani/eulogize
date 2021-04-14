@@ -4,10 +4,7 @@ import {
   PlatformOS,
   StatusBarColor,
   RedColor,
-  OrangeColor,
-  YellowColor,
   fontWhite,
-  SHeight
 } from '../../../utils/Constants';
 import Header from '../../../components/Header';
 import styles from './styles';

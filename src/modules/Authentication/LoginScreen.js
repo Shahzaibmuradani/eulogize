@@ -86,7 +86,7 @@ const LoginScreen = ({navigation})=>{
                         }}
                         text={"LOGIN"} 
                         style={{marginTop:20}}
-                        />
+                    />
                     <TouchableOpacity>
                         <Text style={{fontFamily:"Roboto-Light", alignSelf:"center", marginTop:20}}>
                             Don't have an account? <Text style={{color:RedColor, fontFamily:"Roboto-Medium"}}>SINGUP</Text>

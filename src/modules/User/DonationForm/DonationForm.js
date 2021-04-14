@@ -6,15 +6,14 @@ import {image_placeholder, plus_icon, box_icon, attachment_icon} from '../../../
 import Button from '../../../components/BorderButton';
 import ModalComponent from '../../../components/Modal'
 import {
-    PlatformOS,
-    StatusBarColor,
     RedColor,
-    OrangeColor,
-    YellowColor,
     fontWhite,
-    SHeight
+    PlatformOS
   } from '../../../utils/Constants';
 import styles from './styles';
+import Header from '../../../components/Header';
+
+
 
 const DonationForm = ({navigation}) => {
 
@@ -34,8 +33,15 @@ const DonationForm = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Header
+                PlatformOS={PlatformOS}
+                backIcon={PlatformOS == "ios"}
+                onLeftIconPress={()=>{}}
+                searchBar={false}
+                title="REQUEST DONATION"
+                navigation={navigation}
+            />
             <ScrollView style={styles.childContainer}>
-           
                 <Input placeholder={"Name"} value={name} onChangeText={(x)=> setName(x)}/>
                 <Input placeholder={"Relation"} value={relation} onChangeText={(x)=> setRelation(x)}/>
                 <Input placeholder={"Address"} value={address} onChangeText={(x)=> setAddress(x)}/>

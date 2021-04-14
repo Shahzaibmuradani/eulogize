@@ -1,11 +1,10 @@
 import { StyleSheet, Dimensions} from 'react-native';
-import {HeadingMedium, SHeight} from '../../../utils/Constants';
+import {HeadingMedium, SHeight, StatusBarColor} from '../../../utils/Constants';
 
 export default StyleSheet.create({
     container:{
-        paddingHorizontal:20, 
-        backgroundColor:"yellow", 
-        minHeight:SHeight
+        backgroundColor:StatusBarColor,
+        flex:1
     },
     rows:{
         flexDirection:'row', 

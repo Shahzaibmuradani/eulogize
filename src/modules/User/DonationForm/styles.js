@@ -1,12 +1,13 @@
 import { StyleSheet, Dimensions} from 'react-native';
-import {HeadingMedium, SHeight} from '../../../utils/Constants';
+import {HeadingMedium, SHeight, StatusBarColor} from '../../../utils/Constants';
 export default StyleSheet.create({
     container:{ 
         flex: 1, 
-        backgroundColor:"#FFFFFF" 
+        backgroundColor:StatusBarColor
     },
     childContainer:{
         padding: 50,
+        backgroundColor:'#fff'
     },
     heading: {
         textAlign:'center',

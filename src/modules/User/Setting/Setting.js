@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, Text, View, Image} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {SafeAreaView, Text, View, Image, TouchableOpacity} from 'react-native';
 import {go_right_icon, toggle_off_icon,toggle_on_icon, edit_icon} from '../../../assets/images/Images'
 import Divider from '../../../components/Divider'
 import styles from './styles'
@@ -10,8 +9,7 @@ const UserSettings = ({navigation}) => {
 
 
     return(
-        <SafeAreaView >
-           
+        <SafeAreaView style={styles.container}>
             <View style={{padding:20}}>
                 <View style={[styles.rows]} >
                         <Text style={styles.text}>NOTIFICATION</Text>
