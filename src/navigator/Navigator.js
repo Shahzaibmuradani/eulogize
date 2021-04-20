@@ -98,6 +98,13 @@ const DrawerNavigator = ()=>{
         <Drawer.Navigator drawerContent={(props)=> <DrawerView {...props}/>} initialRouteName="UserHome">
             <Drawer.Screen name="UserHome" component={UserHome} />
             <Drawer.Screen name="MyRequest" component={MyRequest} />
+            <Drawer.Screen name="DonationForm" component={DonationForm} />
+            <Drawer.Screen name="UserSettings" component={UserSettings} />
+            <Drawer.Screen name="RequestFuneral" component={RequestFuneral} />
+            <Drawer.Screen name="Profile" component={UserProfile} />
+            <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
+            <Drawer.Screen name="FAQ" component={FAQ} />
+            <Drawer.Screen name="AboutUs" component={AboutUs} />
         </Drawer.Navigator>
     )
 }
@@ -107,7 +114,14 @@ const DrawerNavigator2 = ()=>{
     return(
         <Drawer.Navigator drawerContent={(props)=> <DrawerView {...props}/>} initialRouteName="FuneralHome">
             <Drawer.Screen name="FuneralHome" component={FuneralHome} />
+            <Drawer.Screen name="DonationForm" component={DonationForm} />
+            <Drawer.Screen name="UserSettings" component={UserSettings} />
+            <Drawer.Screen name="RequestFuneral" component={RequestFuneral} />
             <Drawer.Screen name="MyRequest" component={ViewPayments} />
+            <Drawer.Screen name="Profile" component={Profile} />
+            <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
+            <Drawer.Screen name="FAQ" component={FAQ} />
+            <Drawer.Screen name="AboutUs" component={AboutUs} />
         </Drawer.Navigator>
     )
 }

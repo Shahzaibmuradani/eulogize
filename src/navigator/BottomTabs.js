@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {bottomBar} from '../assets/images/Images';
-import {HeadingLarge, StatusBarColor} from '../utils/Constants';
+import {HeadingLarge, StatusBarColor, SWidth} from '../utils/Constants';
 import { useSelector } from 'react-redux';
 
 export default ({navigation})=>{
@@ -10,19 +10,19 @@ export default ({navigation})=>{
         <View style={styles.container}>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("UserHome")}>
                 <Image style={styles.icon} source={bottomBar.home} />
-                <Text>Home</Text>
+                <Text style={styles.text}>Home</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("MyRequest")}>
                 <Image style={styles.icon} source={bottomBar.message} />
-                <Text>{userType == "user" ? "My Request" : "View Payments"}</Text>
+                <Text style={styles.text}>{userType == "user" ? "My Request" : "View Payments"}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.donations} />
-                <Text>Donations</Text>
+                <Text style={styles.text}>Donations</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.navigate("UserSettings")}>
                 <Image style={styles.icon} source={bottomBar.settings} />
-                <Text>Settings</Text>
+                <Text style={styles.text}>Settings</Text>
             </TouchableOpacity>
         </View>
     )
@@ -50,8 +50,6 @@ const styles= StyleSheet.create({
         height:25
     },
     text:{
-        fontFamily:"Roboto-Bold",
-        color:"#D92334",
-        fontSize:HeadingLarge
+        fontSize:SWidth * 0.03
     }
 })

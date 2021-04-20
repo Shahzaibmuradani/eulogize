@@ -7,10 +7,9 @@ const UserSettings = ({navigation}) => {
 
     const [toggle, setToggle] = useState(true)
 
-
     return(
         <SafeAreaView style={styles.container}>
-            <View style={{padding:20}}>
+            <View style={{padding:20, backgroundColor:'#fff', flex:1}}>
                 <View style={[styles.rows]} >
                         <Text style={styles.text}>NOTIFICATION</Text>
                     <TouchableOpacity onPress={()=>setToggle(!toggle)}>

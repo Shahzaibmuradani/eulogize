@@ -75,7 +75,6 @@ const ViewPaymentDetails = ({navigation}) => {
             temp[index].isOpen = !item.isOpen
             setDataSource(temp)
         }}>
-            {console.log(item.isOpen, ' itemitemitem')}
             <DetailBox detailPrice={"200"} progressBar={item.isOpen} isDetail data={item} index={index} navigation={navigation} myRequest/>
         </TouchableOpacity>
     );

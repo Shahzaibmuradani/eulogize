@@ -81,7 +81,7 @@ const LoginScreen = ({navigation})=>{
                             if(userType == "user"){
                                 navigation.navigate("UserHome")
                             }else{
-                                navigation.navigate("FuneralHome")
+                                navigation.navigate("UserHome")
                             }
                         }}
                         text={"LOGIN"} 
