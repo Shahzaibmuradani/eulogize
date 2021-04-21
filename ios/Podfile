@@ -17,6 +17,10 @@ target 'eulogize' do
     # Pods for testing
   end
 
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Performance'
+  pod 'Firebase/Crashlytics'
+
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and

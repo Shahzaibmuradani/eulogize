@@ -16,6 +16,7 @@
 		8B083044261331CD0084801D /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74CF1C518B8340A7944FB1A1 /* Roboto-Light.ttf */; };
 		8B083045261331CD0084801D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61F038C66A7D4F0698163278 /* Roboto-Medium.ttf */; };
 		8B083046261331CD0084801D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD8DFA35E6294470B88691CE /* Roboto-Regular.ttf */; };
+		8B88B981262FC16000DDD83E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B88B980262FC16000DDD83E /* GoogleService-Info.plist */; };
 		B52C9678D12B604F5FC07255 /* libPods-eulogize-eulogizeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B03A240CAA8D1589FE748C /* libPods-eulogize-eulogizeTests.a */; };
 		EFC51BAE15DD015AD518A45E /* libPods-eulogize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2591DDE0AB9722EE95BAA2DC /* libPods-eulogize.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = eulogize/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85C2BC6AFF50292939B588E3 /* Pods-eulogize-eulogizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eulogize-eulogizeTests.debug.xcconfig"; path = "Target Support Files/Pods-eulogize-eulogizeTests/Pods-eulogize-eulogizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B850CCB262E888000DCDE09 /* eulogize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = eulogize.entitlements; path = eulogize/eulogize.entitlements; sourceTree = "<group>"; };
+		8B88B980262FC16000DDD83E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "eulogize/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F4186AD17784690ADF5903B /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		9C5DF9784FB54E06B19BED20 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		A249E02B781E4F34B40B21E0 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				8B850CCB262E888000DCDE09 /* eulogize.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				8B88B980262FC16000DDD83E /* GoogleService-Info.plist */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				D931944F7DDE9B51AEF73BD6 /* [CP] Copy Pods Resources */,
+				8B88B90B262FC07A00DDD83E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +304,7 @@
 				8B083046261331CD0084801D /* Roboto-Regular.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8B88B981262FC16000DDD83E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +385,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8B88B90B262FC07A00DDD83E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		D931944F7DDE9B51AEF73BD6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
