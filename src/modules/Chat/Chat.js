@@ -6,7 +6,7 @@ import {PlatformOS} from '../../utils/Constants';
 import {sendIcon, attachFileIcon} from '../../assets/images/Images';
 
 
-const Chat =  ({navigation})=>{
+const Chat = ({navigation})=>{
      return(
          <SafeAreaView style={styles.container}>
              <Header
