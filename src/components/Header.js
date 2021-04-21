@@ -13,6 +13,7 @@ const Header = ({
     searchBar,
     onSearch,
     RightComonent,
+    CenterComponent
 })=>{
     
     return(
@@ -24,9 +25,9 @@ const Header = ({
                     </TouchableOpacity>
                 </View>
 
-                <View style={{flex:1}}>
+               {CenterComponent ? <CenterComponent/> :  <View style={{flex:1}}>
                     <Text style={[styles.headerTile, {textAlign:PlatformOS == "ios" ? 'center' : 'left'}]}>{title}</Text>
-                </View>
+                </View>}
 
                 <View>
                     {RightComonent ? <RightComonent/> : <Image source={backIcon? null:home_icon} style={styles.icons}/>}

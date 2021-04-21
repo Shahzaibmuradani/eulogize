@@ -26,6 +26,9 @@ export const message_icon = require('./message_icon.png')
 export const profile_pic = require('./profile_pic.jpg')
 export const card_logo = require('./card_logo.png')
 export const add_amount_doller = require('./add_amount_doller.png')
+export const sendIcon = require('./sendIcon.png')
+export const attachFileIcon = require('./attachFileIcon.png')
+
 
 
 

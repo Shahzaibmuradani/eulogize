@@ -29,6 +29,8 @@ import UserProfile from '../modules/User/Profile/Profile';
 import PrivacyPolicy from '../modules/PrivacyPolicy/PrivacyPolicy';
 import FAQ from '../modules/FAQ/FAQ';
 import AboutUs from '../modules/AboutUs/AboutUs';
+import Chat from '../modules/Chat/Chat';
+
 
 
 
@@ -50,6 +52,7 @@ function Navigator({setConnetion, isConnected}) {
                 <Stack.Screen name="Payment" component={Payment} />
                 <Stack.Screen name="CardDetail" component={CardDetail} />
                 <Stack.Screen name="RequestDetail" component={RequestDetail} />
+                <Stack.Screen name="Chat" component={Chat} />
 
             </Stack.Navigator>
         </NavigationContainer>
@@ -86,7 +89,6 @@ const TabNavigator2 = ()=>{
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
             <Tab.Screen name="AboutUs" component={AboutUs} />
-
         </Tab.Navigator>
     )
 }

@@ -79,7 +79,7 @@ const LoginScreen = ({navigation})=>{
                     <Button 
                         onPress={()=>{
                             if(userType == "user"){
-                                navigation.navigate("UserHome")
+                                navigation.navigate("Chat")
                             }else{
                                 navigation.navigate("UserHome")
                             }
