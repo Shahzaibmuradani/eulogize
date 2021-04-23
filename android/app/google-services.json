@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "427490147332",
+    "project_id": "eulogize-f7ac5",
+    "storage_bucket": "eulogize-f7ac5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427490147332:android:a808049019fbe1a03b8951",
+        "android_client_info": {
+          "package_name": "com.eulogize"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427490147332-ju4nsd2kap1e1sfienbg4ln83c4horeq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN75SSCJf7IMKvMliSMJpznS39Kmsmn9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427490147332-ju4nsd2kap1e1sfienbg4ln83c4horeq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "427490147332-8gbnlufmicgrf2q798beljljg2o05mjf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appmaisters.eulogize"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

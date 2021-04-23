@@ -14,7 +14,7 @@ const UserHome = ({navigation}) => {
     
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor:StatusBarColor }}>
-        {PlatformOS == "android" &&<Header/>}
+        {PlatformOS == "android" &&<Header navigation={navigation}/>}
         <ScrollView showsVerticalScrollIndicator={false}>
           <ImageBackground source={background_splash} style={styles.container}>
             <Image source={logo} style={styles.logo}/>

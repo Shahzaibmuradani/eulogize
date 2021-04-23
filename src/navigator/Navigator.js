@@ -8,6 +8,8 @@ import StartScreen from '../modules/Authentication/StartScreen'
 import UserHome from '../modules/User/UserHome/Home'
 import FuneralHome from '../modules/Funeral/FuneralHome/Home'
 import LoginScreen from '../modules/Authentication/LoginScreen'
+import SignUp from '../modules/Authentication/SignUp'
+
 import ForgotPassword from '../modules/Authentication/ForgotPassword';
 import {PlatformOS} from '../utils/Constants';
 import BottomBar from './BottomTabs';
@@ -45,6 +47,7 @@ function Navigator({setConnetion, isConnected}) {
                 
                 <Stack.Screen name="StartScreen" component={StartScreen} />
                 <Stack.Screen name="LoginScreen" component={LoginScreen} />
+                <Stack.Screen name="SignUp" component={SignUp} />
                 <Stack.Screen name="UserHome" component={PlatformOS == "android" ? DrawerNavigator :TabNavigator} />
                 <Stack.Screen name="FuneralHome" component={PlatformOS == "android" ? DrawerNavigator2 :TabNavigator2} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />

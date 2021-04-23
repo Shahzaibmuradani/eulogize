@@ -61,10 +61,10 @@ const FuneralHome = ({navigation}) => {
           navigation={navigation}
         />
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Calander onChange={(x)=>{
+          {showCalander && <Calander onChange={(x)=>{
             setShowCalander(false)
             console.log(x)
-            }} show={showCalander} onHide={()=>{setShowCalander(false)}} />
+            }} show={showCalander} onHide={()=>{setShowCalander(false)}} />}
           <ImageBackground source={background_splash} style={styles.container}>
               <Text style={styles.heading}>SELECT A SUBSCRIPTION PLAN</Text>
               {

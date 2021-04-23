@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 
 const SHeight =  Dimensions.get('window').height
 
-const LoginScreen = ({navigation})=>{
+const SignUp = ({navigation})=>{
     const [check, setCheck] = React.useState(true)
     const userType = useSelector(state => state.userType.userType)
     return(
@@ -20,6 +20,37 @@ const LoginScreen = ({navigation})=>{
                 <Image source={logo} style={styles.logo} />
                 <View style={styles.childContainer}>
                     
+                    <View style={styles.flexRow}>
+                        <View style={styles.w80}>
+                            <TextInput
+                                style={{height: 40,color:"black"}}
+                                placeholder="First Name"
+                                placeholderTextColor={'grey'}
+                            />
+                        </View>
+
+                        <View style={styles.w20}>
+                            {/* <Image source={tick} style={styles.formImages} /> */}
+                        </View>
+                    </View>
+                    <Divider/>
+
+                    <View style={styles.flexRow}>
+                        <View style={styles.w80}>
+                            <TextInput
+                                style={{height: 40,color:"black"}}
+                                placeholder="Last Name"
+                                placeholderTextColor={'grey'}
+                            />
+                        </View>
+
+                        <View style={styles.w20}>
+                            {/* <Image source={eye} style={styles.formImages} /> */}
+                        </View>
+                    </View>
+                    <Divider/>
+                    
+
                     <View style={styles.flexRow}>
                         <View style={styles.w80}>
                             <TextInput
@@ -39,9 +70,24 @@ const LoginScreen = ({navigation})=>{
                         <View style={styles.w80}>
                             <TextInput
                                 style={{height: 40,color:"black"}}
-                                placeholder="Password"
+                                placeholder="Passowrd"
                                 placeholderTextColor={'grey'}
-                                secureTextEntry={true}
+                            />
+                        </View>
+
+                        <View style={styles.w20}>
+                            <Image source={eye} style={styles.formImages} />
+                        </View>
+                    </View>
+                    <Divider/>
+
+
+                    <View style={styles.flexRow}>
+                        <View style={styles.w80}>
+                            <TextInput
+                                style={{height: 40,color:"black"}}
+                                placeholder="Confirm Password"
+                                placeholderTextColor={'grey'}
                             />
                         </View>
 
@@ -52,6 +98,19 @@ const LoginScreen = ({navigation})=>{
                     <Divider/>
 
                     <View style={styles.flexRow}>
+                        <View style={styles.w100}>
+                            <TextInput
+                                style={{height: 40,color:"black", width:'100%',}}
+                                placeholder="Bank Account Information (optional)"
+                                placeholderTextColor={'grey'}
+                            />
+                        </View>
+
+                    </View>
+                    <Divider/>
+
+
+                    {/* <View style={styles.flexRow}>
                         <CheckBox
                             onPress={()=>setCheck(!check)}
                             center
@@ -75,21 +134,21 @@ const LoginScreen = ({navigation})=>{
                                 color:RedColor,
                                 textDecorationLine: 'underline'}}>Forgot Password</Text>
                         </TouchableOpacity>
-                    </View>
+                    </View> */}
                     <Button 
                         onPress={()=>{
-                            if(userType == "user"){
-                                navigation.navigate("UserHome")
-                            }else{
-                                navigation.navigate("FuneralHome")
-                            }
+                            // if(userType == "user"){
+                            //     navigation.navigate("UserHome")
+                            // }else{
+                            //     navigation.navigate("FuneralHome")
+                            // }
                         }}
-                        text={"LOGIN"} 
+                        text={"SIGNUP"} 
                         style={{marginTop:20}}
                     />
-                    <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('LoginScreen')}>
                         <Text style={{fontFamily:"Roboto-Light", alignSelf:"center", marginTop:20}}>
-                            Don't have an account? <Text style={{color:RedColor, fontFamily:"Roboto-Medium"}}>SINGUP</Text>
+                            have an account? <Text style={{color:RedColor, fontFamily:"Roboto-Medium"}}>LOGIN</Text>
                         </Text>
                     </TouchableOpacity>
                     <Text style={{fontSize:12,fontFamily:"Roboto-Regular",textDecorationLine: 'underline', marginTop:40, alignSelf:"center"}}>Terms And Conditions</Text>
@@ -98,7 +157,7 @@ const LoginScreen = ({navigation})=>{
       </View>
     )
 }
-export default LoginScreen;
+export default SignUp;
 const styles=StyleSheet.create({
     container:{
       flex: 1,flexDirection: "column"
@@ -115,8 +174,11 @@ const styles=StyleSheet.create({
     flexRow:{
         flexDirection:'row'
     },
+    w100:{
+        width:"100%", justifyContent:'center',paddingLeft:5
+    },
     w80:{
-        width:"80%", justifyContent:'center',paddingLeft:10
+        width:"80%", justifyContent:'center',paddingLeft:5
     },
     w20:{
         width:"20%", justifyContent:'center',

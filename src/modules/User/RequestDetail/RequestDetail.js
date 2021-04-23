@@ -15,7 +15,7 @@ const RequestDetail = ({navigation}) => {
         <SafeAreaView style={styles.container}>
             <Header
                 PlatformOS={PlatformOS}
-                backIcon={PlatformOS == "ios"}
+                backIcon={true}
                 onLeftIconPress={()=>{}}
                 searchBar={false}
                 title="REQUEST DETAIL"
