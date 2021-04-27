@@ -77,7 +77,6 @@ const TabNavigator = ()=>{
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
             <Tab.Screen name="Profile" component={UserProfile} />
-            <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
             <Tab.Screen name="AboutUs" component={AboutUs} />
