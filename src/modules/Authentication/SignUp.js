@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet,ImageBackground, TextInput, Image,Dimensions } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet,ImageBackground, TextInput, Image,Dimensions, ScrollView } from 'react-native';
 import {background_splash, logo,tick,eye} from '../../assets/images/Images'
 import Button from '../../components/SolidButton'
 import Divider from '../../components/Divider'
@@ -17,9 +17,8 @@ const SignUp = ({navigation})=>{
     return(
         <View style={styles.container}>
             <ImageBackground source={background_splash} style={styles.background}>
-                <Image source={logo} style={styles.logo} />
-                <View style={styles.childContainer}>
-                    
+                <ScrollView style={styles.childContainer}>
+                    <Image source={logo} style={styles.logo} />
                     <View style={styles.flexRow}>
                         <View style={styles.w80}>
                             <TextInput
@@ -152,7 +151,7 @@ const SignUp = ({navigation})=>{
                         </Text>
                     </TouchableOpacity>
                     <Text style={{fontSize:12,fontFamily:"Roboto-Regular",textDecorationLine: 'underline', marginTop:40, alignSelf:"center"}}>Terms And Conditions</Text>
-                </View>
+                </ScrollView>
             </ImageBackground>
       </View>
     )

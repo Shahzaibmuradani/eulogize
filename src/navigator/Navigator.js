@@ -23,7 +23,9 @@ import ViewPayments from '../modules/Funeral/ViewPayments/ViewPayments';
 import ViewPaymentDetails from '../modules/Funeral/ViewPaymentDetails/ViewPaymentDetails';
 import RequestDetail from '../modules/User/RequestDetail/RequestDetail';
 import Payment from '../modules/User/Payment/Payment';
+import PaymentMethod from '../modules/User/PaymentMethod/PaymentMethod';
 import CardDetail from '../modules/User/CardDetail/CardDetails';
+import ChangePassword from '../modules/ChangePassword/ChangePassword';
 
 import History from '../modules/Funeral/History/History';
 import Profile from '../modules/Funeral/Profile/Profile';
@@ -53,8 +55,10 @@ function Navigator({setConnetion, isConnected}) {
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
                 <Stack.Screen name="ViewPaymentDetails" component={ViewPaymentDetails} />
                 <Stack.Screen name="Payment" component={Payment} />
+                <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
                 <Stack.Screen name="CardDetail" component={CardDetail} />
                 <Stack.Screen name="RequestDetail" component={RequestDetail} />
+                <Stack.Screen name="ChangePassword" component={ChangePassword} />
                 <Stack.Screen name="Chat" component={Chat} />
 
             </Stack.Navigator>
@@ -73,6 +77,7 @@ const TabNavigator = ()=>{
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
             <Tab.Screen name="Profile" component={UserProfile} />
+            <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
             <Tab.Screen name="AboutUs" component={AboutUs} />

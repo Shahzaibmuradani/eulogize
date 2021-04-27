@@ -18,7 +18,7 @@ const UserSettings = ({navigation}) => {
                 </View>
                 <Divider/>
 
-                <TouchableOpacity style={styles.rows}>
+                <TouchableOpacity onPress={()=>navigation.navigate('PaymentMethod')} style={styles.rows}>
                     <Text style={styles.text}>PAYMENT METHOD</Text>
                     <Image source ={edit_icon} style={styles.image}/>
                 </TouchableOpacity>
@@ -38,6 +38,12 @@ const UserSettings = ({navigation}) => {
 
                 <TouchableOpacity onPress={()=>navigation.navigate('PrivacyPolicy')} style={styles.rows}>
                     <Text style={styles.text}>PRIVACY POLICY</Text>
+                    <Image source ={go_right_icon} style={styles.image}/>
+                </TouchableOpacity>
+                <Divider/>
+
+                <TouchableOpacity onPress={()=>navigation.navigate('ChangePassword')} style={styles.rows}>
+                    <Text style={styles.text}>CHANGE PASSWORD</Text>
                     <Image source ={go_right_icon} style={styles.image}/>
                 </TouchableOpacity>
                 <Divider/>
