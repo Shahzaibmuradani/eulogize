@@ -24,7 +24,12 @@ export default ({show, onHide, onChange})=>{
                     <View style={styles.centerView}>
                         <View style={{backgroundColor:'#fff', width:'100%'}}>
                             <CalendarPicker
-                                minDate={minDate}
+                                startFromMonday={true}
+                                allowRangeSelection={true}
+                                maxDate={minDate}
+                                todayBackgroundColor="#f2e6ff"
+                                selectedDayColor="#7300e6"
+                                selectedDayTextColor="#FFFFFF"
                                 onDateChange={onChange}
                             />
                         </View>
