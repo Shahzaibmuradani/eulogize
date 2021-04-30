@@ -10,16 +10,24 @@ import styles from './styles';
 import {eye, edit_icon, dropdown_icon} from '../../../assets/images/Images';
 import Divider from '../../../components/Divider'
 import ImagePicker from '../../../utils/ImagePicker';
+import EditBankAccountFormModal from '../../../components/EditBankAccountFormModal';
+
 
 const Profile = ({navigation}) => {
     const [showCalander, setShowCalander] = useState(false)
     const [isEditable, setIsEditable] = useState(false)
     const [showDropDown, setShowDropDown] = useState(false)
+    const [showEditBank, setShowEditBank] = useState(false)
+
 
 
     const [avatar, setAvatar] = useState({uri:""})
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor:StatusBarColor }}>
+        <EditBankAccountFormModal 
+          onClose={()=>setShowEditBank(false)} 
+          navigation={navigation} 
+          visibility={showEditBank}/>
         <Header
           PlatformOS={PlatformOS}
           backIcon={true}
@@ -170,10 +178,10 @@ const Profile = ({navigation}) => {
               </View>
               <Divider styles={{marginBottom:20}}/>
 
-              <View style={{flexDirection:'row'}}>
+              <TouchableOpacity onPress={()=>setShowEditBank(true)} style={{flexDirection:'row'}}>
                   <View style={styles.w80}>
                       <TextInput
-                        editable={isEditable}
+                        editable={false}
                         style={{height: 40,color:"black"}}
                         placeholder="Bank Account Information (optional)"
                         placeholderTextColor={'grey'}
@@ -181,7 +189,7 @@ const Profile = ({navigation}) => {
                   </View>
                   <View style={styles.w20}>
                   </View>
-              </View>
+              </TouchableOpacity>
               <Divider styles={{marginBottom:20}}/>
           </View>
         </ScrollView>
