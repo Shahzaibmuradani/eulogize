@@ -51,7 +51,7 @@ const FuneralHome = ({navigation}) => {
       <SafeAreaView style={{ flex: 1, backgroundColor:StatusBarColor }}>
         <Header
           PlatformOS={PlatformOS}
-          backIcon={true}
+          // backIcon={true}
           onLeftIconPress={()=>{}}
           onRightIconPress={()=>{setShowCalander(true)}}
           searchBar={false}

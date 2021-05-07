@@ -54,7 +54,6 @@ function Navigator({setConnetion, isConnected}) {
                 <Stack.Screen name="FuneralHome" component={PlatformOS == "android" ? DrawerNavigator2 :TabNavigator2} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
                 <Stack.Screen name="ViewPaymentDetails" component={ViewPaymentDetails} />
-                <Stack.Screen name="Payment" component={Payment} />
                 <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
                 <Stack.Screen name="CardDetail" component={CardDetail} />
                 <Stack.Screen name="RequestDetail" component={RequestDetail} />
@@ -80,6 +79,8 @@ const TabNavigator = ()=>{
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
             <Tab.Screen name="AboutUs" component={AboutUs} />
+            <Tab.Screen name="Payment" component={Payment} />
+
         </Tab.Navigator>
     )
 }
@@ -114,6 +115,8 @@ const DrawerNavigator = ()=>{
             <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Drawer.Screen name="FAQ" component={FAQ} />
             <Drawer.Screen name="AboutUs" component={AboutUs} />
+            <Drawer.Screen name="Payment" component={Payment} />
+
         </Drawer.Navigator>
     )
 }
