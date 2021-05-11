@@ -18,16 +18,16 @@ export default (props)=>{
             <ScrollView showsVerticalScrollIndicator={false} style={styles.contentScrollContainer}>
                 <View style={styles.contentContainer}>
                     <TouchableOpacity style={styles.row}>
+                        <Text style={styles.rowHeading}>HOME</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.row}>
                         <Text style={styles.rowHeading}>MY REQUEST(S)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.row}>
-                        <Text style={styles.rowHeading}>PRIVACY POLICY</Text>
+                        <Text style={styles.rowHeading}>DONATION</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.row}>
                         <Text style={styles.rowHeading}>SETTINGS</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.row}>
-                        <Text style={styles.rowHeading}>FAQs</Text>
                     </TouchableOpacity>
                 </View>
                 <Button
