@@ -86,7 +86,7 @@ const ViewPaymentDetails = ({navigation}) => {
                     backIcon={PlatformOS == "ios"}
                     onLeftIconPress={()=>{}}
                     searchBar={false}
-                    title="VIEW PAYMENT DETAILS"
+                    title="VIEW PAYMENT"
                     navigation={navigation}
                 />
                 <FlatList

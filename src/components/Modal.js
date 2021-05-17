@@ -5,7 +5,7 @@ import Button from '../components/SolidButton'
 const SWidth = Dimensions.get('window').width;
 const SHeight =  Dimensions.get('window').height;
 
-const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,ButtonStyle,socialShare, navigation})=>{
+const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,ButtonStyle,socialShare, navigation, text1Style, text2Style, centerText})=>{
     
     return(
         <View>
@@ -36,8 +36,9 @@ const ModalComponent = ({text1,text2, visibility, showButton,ButtonText,onPress,
                                 </View>
                             :
                             <View>
-                                <Text style={styles.text}>{text1}</Text>
-                                <Text style={styles.text}>{text2}</Text>
+                                <Text style={[styles.text, {...text1Style}]}>{text1}</Text>
+                                {centerText && <Text style={styles.centerText}>{centerText}</Text>}
+                                <Text style={[styles.text, {...text2Style}]}>{text2}</Text>
                                 {
                                     showButton &&
                                     <Button text={ButtonText} onPress={onPress} style={ButtonStyle}/>
@@ -57,6 +58,13 @@ const styles= StyleSheet.create({
     text:{
         fontFamily:"Roboto-Light",
         fontSize:16
+    },
+    centerText: {
+        fontFamily:"Roboto-Light",
+        fontSize:30,
+        textAlign:'center',
+        fontWeight:'bold',
+        margin:20
     },
     modal:{
         flex: 1,

@@ -19,4 +19,18 @@ export default StyleSheet.create({
         resizeMode:'contain',
         marginBottom:50
     },
+    addNewRequestButton: {
+        flexDirection:'row',
+        justifyContent:'flex-end',
+        alignItems:'center',
+        padding:10
+    },
+    addNewRequestButtonText: {
+        textAlign:'right',
+        fontWeight:'bold'
+    },
+    addCardIcon: {
+        height:10,
+        width:10
+    },
 })

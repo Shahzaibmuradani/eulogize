@@ -3,14 +3,17 @@ import {SafeAreaView, Text, View, Image, TouchableOpacity, ScrollView, TextInput
 import {logo, funeral_home_pic} from '../../../assets/images/Images'
 import Divider from '../../../components/Divider'
 import styles from './styles'
-import {PlatformOS} from '../../../utils/Constants';
+import {PlatformOS, StatusBarColor} from '../../../utils/Constants';
 import Header from '../../../components/Header';
 import DetailBox from '../../../components/DetailBox'
 import { ProgressBar } from 'react-native-paper';
 import Button from '../../../components/SolidButton'
+import { useSelector } from 'react-redux';
 
 
 const RequestDetail = ({navigation}) => {
+    const userType = useSelector(state => state.userType.userType)
+    console.log(userType, ' sadasdad')
     return(
         <SafeAreaView style={styles.container}>
             <Header
@@ -23,7 +26,7 @@ const RequestDetail = ({navigation}) => {
             />
             <ScrollView style={{padding:20, backgroundColor:'#fff'}}>
 
-                <DetailBox disableBottomManu data={{ 
+                <DetailBox disableBottomManu details myRequest data={{ 
                     imageSource: funeral_home_pic,
                     name: 'Johnnie Hudson',
                     funeralHome: "ABC Funeral Home", 
@@ -109,11 +112,25 @@ const RequestDetail = ({navigation}) => {
                     <Image style={styles.image} source={logo}/>
                     <Image style={styles.image} source={logo}/>
                 </View>
-                <Button 
-                    onPress={()=>navigation.navigate('Payment')}
-                    text={"DONATION"} 
-                    style={{marginBottom:40}}
-                />
+                {userType != "user" ? <View style={{flexDirection:'row', justifyContent:'center'}}>
+                    <Button 
+                        // onPress={()=>navigation.navigate('Payment')}
+                        text={"ACCEPT"} 
+                        style={{marginBottom:40, width:100}}
+
+                    />
+                    <Button 
+                        // onPress={()=>navigation.navigate('Payment')}
+                        text={"DECLINE"} 
+                        style={{marginBottom:40, width:100, marginLeft:10, backgroundColor:StatusBarColor}}
+                    />
+                </View>: 
+                 <Button 
+                        onPress={()=>navigation.navigate('Payment')}
+                        text={"DONATION"} 
+                        style={{marginBottom:40}}
+                    />
+                }
 
             </ScrollView>
         </SafeAreaView>

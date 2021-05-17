@@ -7,10 +7,8 @@ import ModalComponent from '../components/Modal';
 import { ProgressBar, Colors } from 'react-native-paper';
 
 
-export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, detailPrice, onDonationPress, disableBottomManu})=>{
+export default ({data, navigation, requestFuneral, myRequest, progressBar, isDetail, detailPrice, onDonationPress, disableBottomManu})=>{
     const [visibility, setVisibility] = React.useState(false)
-    console.log(data, ' asdasdasdsad')
-
     return(
         <View style={styles.container}>
              <ModalComponent 
@@ -41,7 +39,7 @@ export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, 
                     </View> )
                 }
                 <View style={styles.w30}>
-                    {isDetail && <Text style={styles.date}>Exp - {data.expiry_date}</Text>}
+                    {isDetail && data.expiry_date && <Text style={styles.date}>Exp - {data.expiry_date}</Text>}
                 </View>
                 
             </View>
@@ -77,7 +75,7 @@ export default ({data, index, requestFuneral, myRequest, progressBar, isDetail, 
                 <View style={{flexDirection:'row', paddingBottom:10, paddingTop:10}}>
                     {!progressBar  ? <>
                         <View style={[styles.w20, ]}>
-                            {!isDetail && <TouchableOpacity style={styles.imagebox}>
+                            {!isDetail && <TouchableOpacity onPress={()=>navigation.navigate('Chat')} style={styles.imagebox}>
                                 <Image source ={message_icon} style={styles.share_btn}/>
                             </TouchableOpacity>}
                         </View>

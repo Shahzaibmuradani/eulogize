@@ -7,10 +7,13 @@ import {PlatformOS, StatusBarColor} from '../../../utils/Constants';
 import RadioButton from '../../../components/radioButton'
 import Divider from '../../../components/Divider'
 import Button from '../../../components/SolidButton'
+import ModalComponent from '../../../components/Modal'
+
 
 
 const Payment = ({navigation}) => {
     const [checked, setChecked] = useState(1);
+    const [modal, setModal] = useState(false)
     return(
         <SafeAreaView style={{flex: 1, backgroundColor:StatusBarColor}}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -85,11 +88,23 @@ const Payment = ({navigation}) => {
                         <Divider/>
                     </View>
                     <Button
+                        onPress={()=>setModal(true)}
                         style={{width:100}}
                         text={"PROCEED"} 
                     />
                 </View>
             </ScrollView>
+            <ModalComponent 
+                centerText={'$100'}
+                text1={"Your are about to donate"}
+                text2={"to Jhonson Connor from ABC funeral home"}
+                text1Style={{textAlign:'center'}}
+                text2Style={{textAlign:'center'}}
+                visibility={modal} 
+                showButton ButtonText={"CONFIRM"} ButtonStyle={{marginTop:20, width:100}}
+                onPress={()=>{
+                    setModal(!modal);
+            }}/>
         </SafeAreaView>
     )
 }

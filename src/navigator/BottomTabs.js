@@ -16,7 +16,7 @@ export default ({navigation})=>{
                 <Image style={styles.icon} source={bottomBar.message} />
                 <Text style={styles.text}>{userType == "user" ? "My Request" : "View Payments"}</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate(userType == "user" ? "RequestFuneral" : "ViewPayments")} style={styles.iconContainer}>
                 <Image style={styles.icon} source={bottomBar.donations} />
                 <Text style={styles.text}>Donations</Text>
             </TouchableOpacity>

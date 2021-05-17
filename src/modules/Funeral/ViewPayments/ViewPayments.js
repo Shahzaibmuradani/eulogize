@@ -66,7 +66,7 @@ const DATA = [
 
 
 ];
-const ViewRequest = ({navigation}) => {
+const ViewPayments = ({navigation}) => {
     const renderItem =({item, index}) => (
         <TouchableOpacity onPress={()=>navigation.navigate('ViewPaymentDetails')}>
             <DetailBox progressBar data={item} index={index} navigation={navigation} myRequest/>
@@ -98,4 +98,4 @@ const ViewRequest = ({navigation}) => {
     )
 }
 
-export default ViewRequest;
+export default ViewPayments;

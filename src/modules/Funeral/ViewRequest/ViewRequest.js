@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, Text, View, Image, FlatList} from 'react-native';
+import {SafeAreaView, Text, View, Image, FlatList, TouchableOpacity} from 'react-native';
 import {PlatformOS, SHeight, StatusBarColor} from '../../../utils/Constants';
 import {funeral_home_pic} from '../../../assets/images/Images';
 import DetailBox from '../../../components/DetailBox'
@@ -12,8 +12,6 @@ import Header from '../../../components/Header';
         name: 'Johnnie Hudson',
         funeralHome: "ABC Funeral Home", 
         details: "Qwerty yabol deafy tru aled inspect js adisciping eli, dearly ... sit adsciping the elite",
-        time: "10:14 AM",
-        expiry_date: "Feb-30",
         service: "Open Casket",
         amount: "5000$",
         status: "ACCEPTED",
@@ -26,8 +24,6 @@ import Header from '../../../components/Header';
         name: 'Randy Hoffman',
         funeralHome: "ABC Funeral Home", 
         details: "Qwerty yabol deafy tru aled inspect js adisciping eli, dearly ... sit adsciping the elite",
-        time: "10:14 AM",
-        expiry_date: "Feb 26/2021",
         service: "Open Casket",
         amount: "5000$",
         status: "PENDING",
@@ -40,8 +36,6 @@ import Header from '../../../components/Header';
         name: 'Phillip Boyd',
         funeralHome: "ABC Funeral Home", 
         details: "Qwerty yabol deafy tru aled inspect js adisciping eli, dearly ... sit adsciping the elite",
-        time: "10:14 AM",
-        expiry_date: "Feb 26/2021",
         service: "Open Casket",
         amount: "5000$",
         status: "DECLINE",
@@ -54,8 +48,6 @@ import Header from '../../../components/Header';
         name: 'Jacob Fox',
         funeralHome: "ABC Funeral Home", 
         details: "Qwerty yabol deafy tru aled inspect js adisciping eli, dearly ... sit adsciping the elite",
-        time: "10:14 AM",
-        expiry_date: "Feb 26/2021",
         service: "Open Casket",
         amount: "5000$",
         status: "DECLINE",
@@ -68,9 +60,9 @@ import Header from '../../../components/Header';
   ];
 const ViewRequest = ({navigation}) => {
     const renderItem =({item, index}) => (
-        <View>
-            <DetailBox progressBar data={item} index={index} navigation={navigation} myRequest/>
-        </View>
+        <TouchableOpacity onPress={()=>navigation.navigate('RequestDetail')}>
+            <DetailBox isDetail detailPrice={500} data={item} index={index} navigation={navigation} myRequest/>
+        </TouchableOpacity>
     );
 
     const [dataSource, setDataSource] = useState(DATA);
@@ -83,7 +75,7 @@ const ViewRequest = ({navigation}) => {
                     backIcon={PlatformOS == "ios"}
                     onLeftIconPress={()=>{}}
                     searchBar={false}
-                    title="VIEW REQUEST"
+                    title="VIEW REQUESTS"
                     navigation={navigation}
                 />
                 <FlatList

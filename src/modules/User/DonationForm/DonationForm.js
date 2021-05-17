@@ -26,7 +26,7 @@ const DonationForm = ({navigation}) => {
     const [funerallocation, setFuneralLocation] = useState("")
     const [desc, setDesc] = useState("")
     const [attachments, setAttachments] = useState("")
-    const [modal, setModal] =useState(false)
+    const [modal, setModal] = useState(false)
 
 
     const [servicesToggle, setServicesToggle] = useState(false)
@@ -47,9 +47,9 @@ const DonationForm = ({navigation}) => {
                 <Input placeholder={"Address"} value={address} onChangeText={(x)=> setAddress(x)}/>
 
                 <Input  placeholder={"FuneralHome"} value={funeralHome} 
-                        onChangeText={(x)=> setFuneralHome(x)} 
-                        type={"dropdown"}
-                        options = {["1", "2", "3"]}
+                    onChangeText={(x)=> setFuneralHome(x)} 
+                    type={"dropdown"}
+                    options = {["1", "2", "3"]}
                 />
 
                 <Input placeholder={"Services"} value={services} 
@@ -132,7 +132,7 @@ const DonationForm = ({navigation}) => {
                 <Button
                     onPress={()=>{setModal(!modal)}}
                     textStyle={{color:fontWhite, fontWeight:'normal'}}
-                    text={"REQUEST FOR DONATION"} 
+                    text={"SUBMIT"} 
                     style={{backgroundColor:RedColor, width:'100%', marginBottom:30,}}/>
                 </View>
             </ScrollView>
@@ -140,8 +140,11 @@ const DonationForm = ({navigation}) => {
                 text1={"Your request has been submitted "}
                 text2={"successfully"}
                 visibility={modal} 
-                showButton ButtonText={"OK"} ButtonStyle={{marginTop:20, width:"50%"}}
-                onPress={()=>{setModal(!modal);}}/>
+                showButton ButtonText={"OK"} ButtonStyle={{marginTop:20, width:100}}
+                onPress={()=>{
+                    setModal(!modal);
+                    navigation.navigate('MyRequest')
+                }}/>
         </SafeAreaView>
       );
 }

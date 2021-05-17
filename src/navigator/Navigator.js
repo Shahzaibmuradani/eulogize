@@ -71,10 +71,13 @@ const TabNavigator = ()=>{
     return(
         <Tab.Navigator tabBar={props => <BottomBar {...props}/>}>
             <Tab.Screen name="UserHome" component={UserHome} />
+            <Tab.Screen name="ViewRequest" component={ViewRequest} />
             <Tab.Screen name="DonationForm" component={DonationForm} />
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
+            <Tab.Screen name="ViewPayments" component={ViewPayments} />
+
             <Tab.Screen name="Profile" component={UserProfile} />
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
@@ -89,6 +92,7 @@ const TabNavigator2 = ()=>{
     return(
         <Tab.Navigator tabBar={props => <BottomBar {...props}/>}>
             <Tab.Screen name="FuneralHome" component={FuneralHome} />
+            <Tab.Screen name="ViewRequest" component={ViewRequest} />
             <Tab.Screen name="DonationForm" component={DonationForm} />
             <Tab.Screen name="UserSettings" component={UserSettings} />
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />

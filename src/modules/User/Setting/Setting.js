@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, Text, View, Image, TouchableOpacity} from 'react-native';
+import {SafeAreaView, Text, View, Image, TouchableOpacity, Alert} from 'react-native';
 import {go_right_icon, toggle_off_icon,toggle_on_icon, edit_icon} from '../../../assets/images/Images'
 import Divider from '../../../components/Divider'
 import styles from './styles'
@@ -42,8 +42,33 @@ const UserSettings = ({navigation}) => {
                 </TouchableOpacity>
                 <Divider/>
 
+                <TouchableOpacity onPress={()=>navigation.navigate('FAQ')} style={styles.rows}>
+                    <Text style={styles.text}>FAQs</Text>
+                    <Image source ={go_right_icon} style={styles.image}/>
+                </TouchableOpacity>
+                <Divider/>
+
                 <TouchableOpacity onPress={()=>navigation.navigate('ChangePassword')} style={styles.rows}>
                     <Text style={styles.text}>CHANGE PASSWORD</Text>
+                    <Image source ={go_right_icon} style={styles.image}/>
+                </TouchableOpacity>
+                <Divider/>
+                
+                <TouchableOpacity onPress={()=>{
+                    Alert.alert(
+                        "Logout",
+                        "Do you want to logout?",
+                        [
+                        {
+                            text: "Cancel",
+                            onPress: () => console.log("Cancel Pressed"),
+                            style: "cancel"
+                        },
+                        { text: "OK", onPress: () => navigation.navigate('StartScreen') }
+                        ]
+                    )
+                }} style={styles.rows}>
+                    <Text style={styles.text}>LOGOUT</Text>
                     <Image source ={go_right_icon} style={styles.image}/>
                 </TouchableOpacity>
                 <Divider/>

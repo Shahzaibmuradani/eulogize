@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView,View, FlatList, Image} from 'react-native';
+import {SafeAreaView,View, FlatList, Image, TouchableOpacity, Text} from 'react-native';
 import {
   PlatformOS,
   SHeight,
   StatusBarColor
 } from '../../../utils/Constants';
-import {funeral_home_pic} from '../../../assets/images/Images'
+import {funeral_home_pic, plus_icon} from '../../../assets/images/Images'
 import Header from '../../../components/Header';
 import DetailBox from '../../../components/DetailBox'
 import styles from './styles';
@@ -85,7 +85,6 @@ const DATA = [
 
 const RequestFuneral = ({navigation}) => {
     const renderItem =({item, index}) => (
-      
       <View>
           <DetailBox onDonationPress={()=>navigation.navigate('RequestDetail')} data={item} index={index} navigation={navigation} requestFuneral/>
       </View>
@@ -101,7 +100,7 @@ const RequestFuneral = ({navigation}) => {
               backIcon={PlatformOS == "ios"}
               onLeftIconPress={()=>{}}
               searchBar={false}
-              title="VIEW REQUEST"
+              title="DONATION FUNERAL"
               navigation={navigation}
               searchBar
               onSearch={()=>{}}
@@ -114,6 +113,12 @@ const RequestFuneral = ({navigation}) => {
               }} 
               show={showCalander}
               onHide={()=>{setShowCalander(false)}} />
+            <TouchableOpacity onPress={()=>navigation.navigate("DonationForm")} style={styles.addNewRequestButton}>
+                <Text style={styles.addNewRequestButtonText}>Add New Request</Text>
+                <View style={{backgroundColor:"#D92334", marginHorizontal:10, borderRadius:5, padding:5}}>
+                  <Image style={styles.addCardIcon} source={plus_icon}/>
+                </View>
+            </TouchableOpacity>
             <FlatList
               contentContainerStyle={{ paddingBottom: SHeight/4 }}
               data={dataSource}
