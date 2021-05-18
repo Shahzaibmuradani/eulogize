@@ -19,7 +19,7 @@ export default StyleSheet.create({
     profilePicContainer: {
         flexDirection:'row',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
     },
     profilePic:{
         width:50,

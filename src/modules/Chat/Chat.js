@@ -11,7 +11,7 @@ const Chat = ({navigation})=>{
          <SafeAreaView style={styles.container}>
              <Header
                 PlatformOS={PlatformOS}
-                backIcon={PlatformOS == "ios"}
+                backIcon={true}
                 onLeftIconPress={()=>{}}
                 searchBar={false}
                 CenterComponent={PlatformOS != "ios" ? ()=>(

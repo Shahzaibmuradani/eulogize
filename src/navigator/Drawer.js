@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, Alert} from 'react-native';
 import {background_splash} from '../assets/images/Images';
 import {StatusBarColor, HeadingMedium, fontWhite, CreamColor, SHeight, lightPink, RedColor} from '../utils/Constants';
 import Button from '../components/BorderButton';
+import { useSelector } from 'react-redux';
 
-export default (props)=>{
+export default ({navigation})=>{
+    const userType = useSelector(state => state.userType.userType)
     return(
         <View style={styles.container}>
             <View style={styles.avatarContainer}>
@@ -17,21 +19,34 @@ export default (props)=>{
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.contentScrollContainer}>
                 <View style={styles.contentContainer}>
-                    <TouchableOpacity style={styles.row}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('UserHome')} style={styles.row}>
                         <Text style={styles.rowHeading}>HOME</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.row}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('MyRequest')} style={styles.row}>
                         <Text style={styles.rowHeading}>MY REQUEST(S)</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.row}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('RequestFuneral')} style={styles.row}>
                         <Text style={styles.rowHeading}>DONATION</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.row}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('UserSettings')} style={styles.row}>
                         <Text style={styles.rowHeading}>SETTINGS</Text>
                     </TouchableOpacity>
                 </View>
                 <Button
-                    onPress={()=>{console.log('submit')}}
+                    onPress={()=>{
+                        Alert.alert(
+                            "Logout",
+                            "Do you want to logout?",
+                            [
+                            {
+                                text: "Cancel",
+                                onPress: () => console.log("Cancel Pressed"),
+                                style: "cancel"
+                            },
+                            { text: "OK", onPress: () => navigation.navigate('StartScreen') }
+                            ]
+                        )
+                    }}
                     textStyle={{color:RedColor, fontWeight:'normal'}}
                     text={"LOGOUT"}
                     style={{width:'50%', backgroundColor:CreamColor}}

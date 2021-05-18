@@ -3,12 +3,21 @@ import {SafeAreaView, Text, View, Image, TouchableOpacity, Alert} from 'react-na
 import {go_right_icon, toggle_off_icon,toggle_on_icon, edit_icon} from '../../../assets/images/Images'
 import Divider from '../../../components/Divider'
 import styles from './styles'
+import Header from '../../../components/Header';
+import {
+    PlatformOS,
+    StatusBarColor,
+    RedColor,
+    fontWhite,
+  } from '../../../utils/Constants';
+
 const UserSettings = ({navigation}) => {
 
     const [toggle, setToggle] = useState(true)
 
     return(
         <SafeAreaView style={styles.container}>
+            {PlatformOS == "android" &&<Header navigation={navigation}/>}
             <View style={{padding:20, backgroundColor:'#fff', flex:1}}>
                 <View style={[styles.rows]} >
                         <Text style={styles.text}>NOTIFICATION</Text>

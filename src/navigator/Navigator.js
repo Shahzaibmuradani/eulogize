@@ -77,7 +77,6 @@ const TabNavigator = ()=>{
             <Tab.Screen name="RequestFuneral" component={RequestFuneral} />
             <Tab.Screen name="MyRequest" component={MyRequest} />
             <Tab.Screen name="ViewPayments" component={ViewPayments} />
-
             <Tab.Screen name="Profile" component={UserProfile} />
             <Tab.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
             <Tab.Screen name="FAQ" component={FAQ} />
@@ -112,6 +111,8 @@ const DrawerNavigator = ()=>{
         <Drawer.Navigator drawerContent={(props)=> <DrawerView {...props}/>} initialRouteName="UserHome">
             <Drawer.Screen name="UserHome" component={UserHome} />
             <Drawer.Screen name="MyRequest" component={MyRequest} />
+            <Drawer.Screen name="ViewRequest" component={ViewRequest} />
+            <Drawer.Screen name="ViewPayments" component={ViewPayments} />
             <Drawer.Screen name="DonationForm" component={DonationForm} />
             <Drawer.Screen name="UserSettings" component={UserSettings} />
             <Drawer.Screen name="RequestFuneral" component={RequestFuneral} />

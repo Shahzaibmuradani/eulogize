@@ -31,7 +31,10 @@ const Header = ({
                 </View>}
 
                 <View>
-                    {RightComonent ? <RightComonent/> : <Image source={backIcon? null:home_icon} style={styles.icons}/>}
+                    {RightComonent ? <RightComonent/> : 
+                    <TouchableOpacity onPress={()=>navigation.navigate('UserHome')}>
+                        <Image source={backIcon? null:home_icon} style={styles.icons}/>    
+                    </TouchableOpacity>}
                 </View>
             </View>
             {searchBar && <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%'}}>

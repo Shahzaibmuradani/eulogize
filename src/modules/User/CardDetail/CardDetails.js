@@ -14,7 +14,7 @@ const Payment = ({navigation}) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Header
                     PlatformOS={PlatformOS}
-                    backIcon={PlatformOS == "ios"}
+                    backIcon={true}
                     onLeftIconPress={()=>{}}
                     searchBar={false}
                     title="CARD DETAIL"
